@@ -1,0 +1,66 @@
+/* Teaching and improving mock-ups (tc-): drawn by teach-kit.tsx and the four pages. Builds on agents.css (ag-).
+   Green marks what’s new, learned, or right; red only for holds and misses. */
+
+/* page bodies */
+.as-a-work.tc-work{grid-template-columns:1fr 15rem}
+.tc-body{display:flex;flex-direction:column;gap:.7rem;max-width:44rem}
+.tc-p{font-size:.78rem;line-height:1.5;color:var(--ink-2)}
+.tc-how{font-size:.8rem;line-height:1.55;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:.4rem;padding:.7rem .9rem}
+.tc-quote{font-size:.76rem;line-height:1.45;color:var(--ink);border-left:3px solid var(--ink);padding:.2rem 0 .2rem .7rem}
+.tc-quote small{display:block;margin-top:.2rem;font-size:.64rem;color:var(--muted)}
+.tc-two{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start}
+.tc-tbl td{font-size:.74rem}
+.tc-tbl .m-link{white-space:nowrap}
+.tc-tbl td small{display:block;font-size:.64rem;color:var(--muted)}
+.tc-tbl td .m-pill{margin-left:.45rem;font-size:.58rem}
+.tc-tbl tr.tc-new td{background:color-mix(in srgb,var(--accent) 7%,#fff)}
+.tc-tbl tr.tc-off td{color:var(--muted)}
+.tc-tbl tr.tc-off .m-link{color:var(--muted)}
+.tc-tbl tfoot td{border-top:1.5px solid var(--ink);border-bottom:0;font-weight:700;padding-top:.45rem}
+
+/* skills and memory: row actions, the learned note in chat, and a skill on its own */
+.tc-mem-acts{display:flex;gap:.7rem;font-size:.68rem;white-space:nowrap}
+.tc-mem-acts a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.tc-learned{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .6rem;font-size:.68rem;line-height:1.4;color:var(--ink-2);background:color-mix(in srgb,var(--accent) 8%,#fff);border-radius:.35rem;padding:.35rem .55rem}
+.tc-learned i{font-style:normal;font-weight:800;color:var(--accent)}
+.tc-learned span{flex:1;min-width:12rem}
+.tc-learned b{color:var(--ink)}
+.tc-learned a{font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.tc-sk{display:flex;flex-direction:column;gap:.2rem;font-size:.76rem;margin-bottom:.5rem}
+.tc-sk span{color:var(--ink-2);font-size:.7rem}
+.tc-sk small{font-size:.66rem;color:var(--muted)}
+.tc-lock{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;font-size:.74rem;color:var(--ink-2);padding:.4rem}
+.tc-lock b{color:var(--ink)}
+
+/* a correction and what it became, on the report */
+.tc-vers{display:flex;flex-direction:column}
+.tc-ver{display:flex;flex-direction:column;gap:.1rem;padding:.45rem 0;border-bottom:1px solid var(--rule);font-size:.68rem;line-height:1.35;color:var(--ink-2)}
+.tc-ver:last-child{border-bottom:0}
+.tc-ver p{display:flex;justify-content:space-between;align-items:baseline}
+.tc-ver p b{font-size:.74rem;color:var(--ink)}
+.tc-ver small{font-size:.62rem;color:var(--muted)}
+
+/* avoid drawings on the report */
+.tc-vanity{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.tc-vanity p{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:.5rem;padding:.6rem .7rem}
+.tc-vanity b{font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+.tc-vanity small{font-size:.66rem;color:var(--ink-2)}
+
+/* the Agent report: key numbers, time saved, and six months */
+.hm-kpis.tc-kpis{grid-template-columns:repeat(3,1fr);max-width:none}
+.tc-kpis .hm-kpi{min-height:0}
+.tc-kpis .hm-kpi b{font-size:1.2rem}
+.tc-trend{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.tc-mini{display:flex;flex-direction:column;gap:.35rem}
+.tc-mini>small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.tc-bars{display:grid;grid-template-columns:repeat(6,1fr);gap:.3rem;align-items:end;height:5rem;border-bottom:1.5px solid var(--ink)}
+.tc-bars span{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:.12rem}
+.tc-bars b{font-size:.56rem;font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tc-bars em{width:100%;background:var(--rule);border-radius:.15rem .15rem 0 0}
+.tc-bars span:last-child em{background:var(--accent)}
+.tc-bars span:last-child b{color:var(--accent)}
+.tc-mos{display:grid;grid-template-columns:repeat(6,1fr);gap:.3rem;font-size:.56rem;color:var(--muted);text-align:center}
+.tc-ba{display:flex;flex-direction:column;gap:.3rem;border:1px solid var(--rule);border-radius:.5rem;padding:.7rem .8rem}
+.tc-ba small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.tc-ba b{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+.tc-ba span{font-size:.7rem;color:var(--ink-2);line-height:1.4}

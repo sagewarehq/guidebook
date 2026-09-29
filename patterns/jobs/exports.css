@@ -1,0 +1,17 @@
+/* System jobs mock-ups (dx-): the job flow and the Jobs page. */
+.dx-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s}
+.dx-step{position:relative;display:flex;flex-direction:column;gap:5px;padding:12px 14px;background:#fff;border:1px solid var(--rule);border-radius:8px;margin-right:18px;font-size:.74rem;color:var(--ink-2);line-height:1.4}
+.dx-step:not(:last-child)::after{content:"→";position:absolute;right:-15px;top:40%;color:var(--accent);font-weight:700}
+.dx-step b{font-size:.8rem;color:var(--ink)}
+.dx-step small{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.dx-step code{font-family:inherit;font-weight:600;font-size:.7rem;background:#EEF0F3;border-radius:3px;padding:0 4px}
+.dx-tbl td,.dx-tbl th{font-size:.74rem}
+.dx-tbl td small{display:block;font-size:.66rem;color:var(--muted);font-weight:400}
+.dx-bar{display:inline-block;width:70px;height:6px;border-radius:3px;background:var(--rule);vertical-align:middle;margin-right:6px;overflow:hidden}
+.dx-bar i{display:block;height:100%;background:var(--accent)}
+.dx-toastrow{display:flex;justify-content:flex-end;margin-top:6px}
+.dx-tree{max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--rule);border-radius:8px;padding:14px 18px;font-size:.78rem;display:flex;flex-direction:column;gap:4px}
+.dx-tree p{display:flex;justify-content:space-between;gap:16px}
+.dx-tree p span{color:var(--muted);font-size:.72rem}
+.dx-tree .i{padding-left:18px}
+.dx-tree .ii{padding-left:36px;color:var(--ink-2)}

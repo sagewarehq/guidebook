@@ -1,0 +1,20 @@
+/* Colour and type tokens, shared by every deck. STYLE.md documents each one.
+   Use these tokens, never raw hex (mock-ups may use #EEF0F3, one step off --light). */
+:root{
+  /* page chrome around the slide (theme-aware) */
+  --page:#E4E6EA; --chrome-ink:#111418; --chrome-muted:#5E6470; --chrome-rule:#C9CDD4;
+  /* slide palette (fixed) */
+  --dark:#111418; --light:#F6F7F9; --ink:#111418; --ink-2:#3D434D; --muted:#6B727D;
+  --rule:#D8DCE2; --paper-ink:#EEF1F4; --paper-2:#A2A9B4; --paper-rule:#2C323B;
+  --accent:#2E6B4F; --accent-soft:#7DC4A0; --alert:#B8372B;
+  --gold:#A8843C; /* the guarantee seal only (STYLE.md, Colour) */
+  --serif:"Newsreader", "Iowan Old Style", Georgia, serif;
+  --sans:"Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--page:#0A0C0F;--chrome-ink:#E8EBEF;--chrome-muted:#8A919C;--chrome-rule:#2A2F37}
+}
+:root[data-theme="dark"]{--page:#0A0C0F;--chrome-ink:#E8EBEF;--chrome-muted:#8A919C;--chrome-rule:#2A2F37}

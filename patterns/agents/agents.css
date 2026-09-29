@@ -1,0 +1,249 @@
+/* Agent Interfaces mock-ups, drawn by agent-kit.tsx. ag- is the kit; each page adds its own prefix below it.
+   Green marks done, red only held, flagged, failed, or paused. */
+
+/* avatar, badge, frame */
+.ag-ava{display:inline-flex;flex:none}
+.ag-ava.sm .m-ini{width:1.25rem;height:1.25rem;font-size:.52rem}
+.ag-ava.sm .m-ini i{font-size:.4rem;right:-.4rem;bottom:-.25rem}
+.ag-ava.lg .m-ini{width:2.5rem;height:2.5rem;font-size:.9rem}
+.ag-ava.lg .m-ini i{font-size:.58rem}
+.ag-top{position:relative;display:inline-flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:.35rem;padding:.2rem .6rem .2rem .35rem;line-height:1.2}
+.ag-top::before{content:'AI';font-size:.52rem;font-weight:800;letter-spacing:.02em;color:#fff;background:var(--accent);border-radius:.2rem;padding:.08rem .22rem}
+.ag-top.on{background:#EEF0F3;border-color:var(--ink)}
+.ag-top em{position:absolute;top:-.5rem;right:-.5rem;min-width:1.1rem;height:1.1rem;display:grid;place-items:center;font-style:normal;font-size:.6rem;font-weight:800;color:#fff;background:var(--accent);border-radius:99px;padding:0 .25rem;box-shadow:0 0 0 2px #fff}
+.ag-has-panel .as-a-grid{min-height:57rem}
+
+/* chat panel: a full-height drawer from the right, beside the work, which stays usable */
+.ag-panel{position:absolute;z-index:3;top:0;right:0;bottom:0;width:40%;min-width:21rem;display:flex;flex-direction:column;background:#fff;border-left:1.2px solid var(--ink)}
+.ag-head{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;border-bottom:1px solid var(--rule)}
+.ag-who{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.ag-who b{font-size:.86rem}
+.ag-who small{font-size:.68rem;color:var(--ink-2)}
+.ag-st{font-size:.66rem;font-weight:600;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ag-st.paused{color:var(--alert)}
+.ag-pause{flex:none;font-size:.66rem;font-weight:700;color:var(--ink-2);border:1px solid var(--rule);border-radius:.3rem;padding:.2rem .5rem}
+.ag-pause.paused{color:var(--alert);border-color:var(--alert)}
+.ag-x{flex:none;font-size:1.1rem;line-height:1;color:var(--ink-2)}
+.ag-on{font-size:.66rem;color:var(--muted);padding:.35rem .9rem;background:#EEF0F3;border-bottom:1px solid var(--rule)}
+.ag-on b{color:var(--ink-2);font-weight:600}
+.ag-feed{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:.6rem;padding:.6rem .9rem}
+.ag-feed>*{flex:none}
+.ag-in{display:flex;align-items:center;gap:.5rem;margin:0 .9rem .9rem;padding:.5rem .6rem;border:1px solid var(--ink);border-radius:.4rem;font-size:.72rem;color:var(--muted)}
+.ag-in span{flex:1}
+.ag-in i{font-style:normal;font-weight:800;color:#fff;background:var(--ink);border-radius:.3rem;padding:.05rem .4rem}
+
+/* full-page chat: sessions on the left, one conversation on the right */
+.ag-page{flex:1;display:grid;grid-template-columns:14rem 1fr;min-height:34rem;border-top:1px solid var(--rule)}
+.ag-sess{display:flex;flex-direction:column;gap:.25rem;padding:.9rem .6rem;border-right:1px solid var(--rule)}
+.ag-sess-all{margin:0 .3rem .4rem;font-size:.72rem}
+.ag-sess-h{display:flex;align-items:center;justify-content:space-between;margin:0 .3rem .5rem;font-size:.82rem}
+.ag-s{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.5rem;padding:.45rem .4rem;border-radius:.3rem}
+.ag-s.on{background:#EEF0F3}
+.ag-s span{min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.ag-s b{font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ag-s small{font-size:.64rem;color:var(--muted)}
+.ag-s em{font-style:normal;font-size:.6rem;color:var(--muted);align-self:start;margin-top:.15rem}
+.ag-conv{display:flex;flex-direction:column;min-width:0}
+
+/* an Agent’s page: header, the ••• menu, and the six tabs */
+.ag-id{display:flex;align-items:center;gap:.75rem}
+.ag-paused{font-weight:700;color:var(--alert)}
+.ag-more{position:relative;display:inline-flex}
+.ag-more .m-btn.on{background:#EEF0F3}
+.ag-menu{position:absolute;z-index:4;top:calc(100% + .3rem);right:0;min-width:11rem;display:flex;flex-direction:column;background:#fff;border:1.2px solid var(--ink);border-radius:.4rem;padding:.3rem;font-size:.74rem}
+.ag-menu p{padding:.3rem .5rem;border-radius:.25rem;color:var(--ink-2);white-space:nowrap}
+.ag-menu p.on{background:color-mix(in srgb,var(--accent) 13%,#fff);color:var(--accent);font-weight:700}
+.ag-menu p.sep{border-top:1px solid var(--rule);border-radius:0;margin-top:.2rem;padding-top:.45rem}
+
+/* a drawer from the right, over an Agent’s page */
+.ag-drawer{position:absolute;z-index:3;top:0;right:0;bottom:0;width:40%;min-width:21rem;display:flex;flex-direction:column;background:#fff;border-left:1.2px solid var(--ink);box-shadow:0 0 0 2000px color-mix(in srgb,var(--ink) 10%,transparent)}
+.ag-drawer-h{display:flex;justify-content:space-between;align-items:flex-start;padding:.8rem 1rem;border-bottom:1px solid var(--rule)}
+.ag-drawer-h b{font-size:.86rem}
+.ag-drawer-h small{display:block;font-size:.66rem;color:var(--muted);margin-top:.15rem}
+.ag-drawer-b{flex:1;display:flex;flex-direction:column;gap:.75rem;padding:.9rem 1rem;min-height:0;overflow:hidden}
+.ag-drawer-f{display:flex;align-items:center;gap:.4rem;padding:.7rem 1rem;border-top:1px solid var(--rule)}
+@media print{.ag-drawer{box-shadow:none}}
+
+/* feed items */
+.ag-day{align-self:center;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:.2rem}
+.ag-me{align-self:flex-end;display:flex;align-items:flex-end;gap:.4rem;max-width:85%}
+.ag-me p{font-size:.74rem;line-height:1.4;color:var(--paper-ink);background:var(--ink);border-radius:.6rem .6rem .15rem .6rem;padding:.4rem .65rem}
+.ag-me .m-ini{width:1.25rem;height:1.25rem;font-size:.52rem}
+.ag-msg{display:flex;align-items:flex-start;gap:.45rem;max-width:100%}
+.ag-bub{min-width:0;flex:1;display:flex;flex-direction:column;gap:.45rem;font-size:.74rem;line-height:1.45;color:var(--ink)}
+.ag-steps{display:flex;flex-direction:column;gap:.15rem;list-style:none;margin:0;padding:0}
+.ag-steps li{display:flex;align-items:baseline;gap:.4rem;font-size:.68rem;line-height:1.35;color:var(--ink-2)}
+.ag-steps i{flex:none;width:.8rem;text-align:center;font-style:normal;font-weight:800}
+.ag-steps .done i{color:var(--accent)}
+.ag-steps .going i{color:var(--muted)}
+.ag-steps .flag i{color:var(--alert)}
+.ag-ask{display:flex;flex-direction:column;gap:.4rem;padding:.55rem .65rem;border:1px solid var(--rule);border-radius:.4rem;background:#fff}
+.ag-ask p{font-size:.74rem;line-height:1.4}
+.ag-ask>span{display:flex;flex-wrap:wrap;gap:.35rem}
+.ag-opt.on{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,#fff)}
+
+/* reasons and sources */
+.ag-why{font-size:.66rem;line-height:1.35;color:var(--ink-2)}
+.ag-src{display:inline-block;font-size:.6rem;font-weight:600;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:.3rem;padding:0 .3rem;white-space:nowrap}
+
+/* approval card */
+.ag-card{display:flex;flex-direction:column;border:1px solid var(--ink);border-radius:.5rem;background:#fff;overflow:hidden}
+.ag-card-h{display:flex;flex-direction:column;gap:.1rem;padding:.55rem .7rem;border-bottom:1px solid var(--rule)}
+.ag-card-h b{font-size:.8rem}
+.ag-card-h small{font-size:.64rem;color:var(--muted)}
+.ag-facts{display:flex;gap:1.1rem;padding:.5rem .7rem;font-size:.8rem;font-weight:700;font-variant-numeric:tabular-nums;border-bottom:1px solid var(--rule)}
+.ag-facts span{display:flex;flex-direction:column}
+.ag-facts small{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.ag-lines,.ag-held{display:flex;flex-direction:column}
+.ag-held{background:color-mix(in srgb,var(--alert) 5%,#fff);border-top:1px solid var(--rule)}
+.ag-line{display:flex;flex-direction:column;gap:.15rem;padding:.38rem .7rem;border-bottom:1px solid var(--rule)}
+.ag-lines>div:last-child .ag-line,.ag-held>div:last-child .ag-line{border-bottom:0}
+.ag-line>p:first-child{display:flex;justify-content:space-between;gap:.6rem;font-size:.7rem;font-weight:600}
+.ag-line>p:first-child span{display:flex;align-items:center;gap:.35rem;min-width:0}
+.ag-line>p:first-child b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ag-line.held>p:first-child b{font-weight:500;color:var(--muted)}
+.ag-line .m-pill{font-size:.55rem;padding:0 .35rem}
+.ag-line-s{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem}
+.ag-acts{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;padding:.55rem .7rem;border-top:1px solid var(--rule)}
+.ag-acts small{flex-basis:100%;font-size:.62rem;color:var(--muted)}
+
+/* runs list */
+.ag-runs td{font-size:.74rem}
+.ag-cell{display:inline-flex;align-items:center;gap:.5rem;font-weight:600}
+.ag-runs tr.ag-wait td{background:color-mix(in srgb,var(--accent) 6%,#fff)}
+.ag-none{color:var(--muted)}
+
+/* overview page (ov-): the app, the runs list, and a record’s history */
+.ov-hist{display:flex;flex-direction:column;gap:.55rem;padding:.2rem 0}
+.ov-hist .as-h{font-size:.74rem}
+
+/* Agents page (ap-): every Agent in one list, with its state, what waits on you, and Pause */
+.ap-runs{font-size:.74rem}
+.ap-tbl td{font-size:.76rem;vertical-align:middle}
+.ap-tbl tr.ap-wait td{background:color-mix(in srgb,var(--accent) 6%,#fff)}
+.ap-tbl tr.ap-paused td{background:color-mix(in srgb,var(--alert) 5%,#fff)}
+.ap-who{display:flex;align-items:center;gap:.6rem}
+.ap-who>span:last-child{display:flex;flex-direction:column;line-height:1.3}
+.ap-who small,.ap-now small{font-size:.66rem;font-weight:500;color:var(--ink-2)}
+.ap-now{display:flex;flex-direction:column;align-items:flex-start;gap:.25rem;max-width:20rem}
+.ap-tbl tr.ap-paused .ap-now small{color:var(--alert)}
+.ap-act{text-align:right;white-space:nowrap}
+.ap-toast{margin-top:auto;padding-top:.6rem}
+.ap-mini{display:flex;flex-direction:column}
+.ap-mini p{display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--rule);font-size:.76rem}
+.ap-mini p:last-child{border-bottom:0}
+.ap-mini .m-ini+span{flex:1;display:flex;flex-direction:column;line-height:1.3}
+.ap-mini small{font-size:.66rem;color:var(--ink-2)}
+.ap-mini em{font-style:normal;font-size:.62rem;font-weight:700;color:#fff;background:var(--accent);border-radius:99px;padding:.05rem .4rem}
+.ap-dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--accent)}
+
+/* Agent profile (pf-): the Instructions textbox, its History drawer, and the Sessions tab */
+.pf-page{gap:.9rem}
+.pf-lead{font-size:.76rem;color:var(--ink-2)}
+.pf-box{display:flex;flex-direction:column;gap:.6rem;font-size:.8rem;line-height:1.55;color:var(--ink);background:#fff;border:1px solid var(--ink-2);border-radius:.35rem;padding:.8rem 1rem;min-height:9rem}
+.pf-box.on{border:1.5px solid var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.pf-caret{display:inline-block;width:1px;height:.95em;margin-left:1px;background:var(--ink);vertical-align:-.1em}
+.pf-foot{display:flex;align-items:center;gap:.6rem}
+.pf-foot small{font-size:.7rem;color:var(--ink-2)}
+.pf-foot .pf-unsaved{font-weight:600;color:var(--ink)}
+.pf-off{opacity:.45}
+.pf-saves{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:.4rem;overflow:hidden}
+.pf-save{display:flex;flex-direction:column;gap:.15rem;padding:.55rem .75rem;border-bottom:1px solid var(--rule)}
+.pf-save:last-child{border-bottom:0}
+.pf-save.on{background:#EEF0F3}
+.pf-save p{display:flex;align-items:center;gap:.5rem;font-size:.76rem}
+.pf-save small{font-size:.66rem;color:var(--muted)}
+.pf-save .pf-read{margin-top:.4rem;min-height:0;border-color:var(--rule);font-size:.72rem;padding:.6rem .75rem}
+.pf-note{font-size:.68rem;color:var(--ink-2)}
+.pf-sess td{font-size:.76rem}
+.pf-sess td:first-child{font-weight:600}
+.pf-mini{display:flex;flex-direction:column;gap:.6rem}
+.pf-mini .pf-box{min-height:0}
+
+/* Telling Agents apart (bd-): who did it, in a list, the history, and an email */
+.bd-tbl td{font-size:.76rem}
+.bd-cell{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .45rem}
+.bd-cell small{font-size:.66rem;color:var(--muted)}
+.bd-by{display:inline-flex;align-items:center;gap:.4rem}
+.bd-by b{font-weight:600}
+.bd-by em{font-style:normal;font-size:.6rem;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,#fff);border-radius:.3rem;padding:0 .3rem}
+.bd-ini .m-ini{width:1.25rem;height:1.25rem;font-size:.52rem}
+.bd-hist{display:flex;flex-direction:column;gap:.6rem}
+.bd-hist .as-h{font-size:.74rem}
+.bd-hist .ag-why{display:block;margin-top:.1rem}
+.bd-mail{display:flex;flex-direction:column;gap:.3rem;font-size:.74rem}
+.bd-mh{display:flex;gap:.6rem;color:var(--ink-2);padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+.bd-mh small{flex:none;width:3.4rem;color:var(--muted)}
+.bd-body{display:flex;flex-direction:column;gap:.5rem;padding-top:.4rem;line-height:1.45}
+.bd-sig small{display:block;margin-top:.4rem;padding-top:.4rem;border-top:1px dashed var(--rule);font-size:.66rem;color:var(--accent);font-weight:600}
+.bd-reply{margin-top:.4rem;padding:.45rem .6rem;border-radius:.4rem;background:#EEF0F3;font-size:.7rem;color:var(--ink-2)}
+
+/* Giving an Agent access (gv-): the locked box in the Role builder, and what an Agent can do */
+.rg-box.gv-lock{border-style:dashed;border-color:var(--muted);background:#EEF0F3}
+.gv-note{font-size:.72rem;color:var(--ink-2);padding-top:.6rem;border-top:1px solid var(--rule)}
+.gv-can{display:flex;flex-direction:column;gap:.7rem}
+.gv-who{display:flex;align-items:center;gap:.6rem;font-size:.78rem}
+.gv-who>span:last-child{display:flex;flex-direction:column;line-height:1.3}
+.gv-who small{font-size:.66rem;color:var(--ink-2)}
+.gv-none{font-style:normal;color:var(--alert);font-weight:600}
+.rb-can p.gv-bad b,.rb-can p.gv-bad span{color:var(--alert)}
+
+/* Drafts, never changes (dr-): a draft that says so, the autopilot switch to avoid, and history lines */
+.dr-mini{display:flex;flex-direction:column;gap:.5rem}
+.dr-mini>p{display:flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600}
+.dr-mini>small{font-size:.68rem;color:var(--ink-2)}
+.dr-acts{display:flex;flex-wrap:wrap;gap:.4rem}
+.dr-switch{justify-content:space-between;padding:.4rem .2rem}
+.dr-switch span{display:flex;flex-direction:column;line-height:1.3}
+.dr-switch small{font-size:.66rem;font-weight:500;color:var(--muted)}
+.dr-switch i.on{flex:none;width:2rem;height:1.1rem;border-radius:99px;background:var(--accent);position:relative}
+.dr-switch i.on::after{content:"";position:absolute;right:.15rem;top:.15rem;width:.8rem;height:.8rem;border-radius:50%;background:#fff}
+.dr-h{font-size:.76rem}
+.dr-h span{display:flex;flex-direction:column;gap:.15rem}
+.dr-h small{font-size:.66rem;color:var(--ink-2)}
+
+/* Where the Agent lives: the Agents window (sessions, chat, detail drawer) */
+.wh-ws{flex:1;display:grid;grid-template-columns:14rem 1fr 15rem;min-height:30rem;border-top:1px solid var(--rule)}
+.wh-sess{display:flex;flex-direction:column;gap:.25rem;padding:.9rem .6rem;border-right:1px solid var(--rule)}
+.wh-sess-h{display:flex;align-items:center;justify-content:space-between;margin:0 .3rem .5rem;font-size:.82rem}
+.wh-s{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.5rem;padding:.45rem .4rem;border-radius:.3rem}
+.wh-s.on{background:#EEF0F3}
+.wh-s span{min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.wh-s b{font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wh-s small{font-size:.64rem;color:var(--muted)}
+.wh-s em{font-style:normal;font-size:.6rem;color:var(--muted);align-self:start;margin-top:.15rem}
+.wh-chat{display:flex;flex-direction:column;min-width:0}
+.wh-chat-h{display:flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-bottom:1px solid var(--rule);font-size:.82rem}
+.wh-chat-h small{color:var(--muted);font-size:.7rem}
+.wh-detail{display:flex;flex-direction:column;gap:.6rem;padding:.9rem 1rem;border-left:1.2px solid var(--ink);background:#fff}
+.wh-detail-h{display:flex;justify-content:space-between;font-size:.86rem}
+.wh-detail-h span{color:var(--muted)}
+.wh-big{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:.4rem}
+.wh-sub{font-size:.7rem;color:var(--ink-2)}
+.wh-held{display:flex;flex-direction:column;gap:.4rem;padding:.7rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.74rem}
+.wh-held p{display:flex;align-items:center;gap:.5rem}
+.wh-acts{display:flex;justify-content:flex-end;gap:.4rem;margin-top:auto}
+/* Pause: two bars drawn in CSS (the ❚❚ glyph read as a stop square) */
+.ag-pause{display:inline-flex;align-items:center;gap:.35rem}
+.ag-pause:not(.paused)::before{content:'';width:.42rem;height:.55rem;border-left:.14rem solid currentColor;border-right:.14rem solid currentColor;box-sizing:border-box}
+.g-stage>.ag-frame{width:100%}
+.wh-all{margin:0 .3rem .4rem;font-size:.72rem}
+
+/* Scheduled tasks (scd-): the Schedule tab, and its Edit drawer */
+.scd-lead{font-size:.76rem;color:var(--ink-2)}
+.scd-tbl td{font-size:.76rem;vertical-align:top}
+.scd-tbl td small{display:block;font-size:.64rem;color:var(--muted);margin-top:.1rem}
+.scd-tbl tr.scd-off td{background:#EEF0F3}
+.scd-tbl td .m-pill{font-size:.6rem}
+.scd-acts{white-space:nowrap;text-align:right}
+.scd-acts a{margin-left:.7rem;font-size:.7rem;font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.scd-foot{font-size:.7rem;color:var(--ink-2)}
+.scd-ask{display:flex;flex-direction:column;gap:.25rem}
+.scd-ask label{font-size:.7rem;font-weight:700}
+.scd-ask p{font-size:.76rem;line-height:1.45;border:1px solid var(--ink-2);border-radius:.35rem;padding:.5rem .6rem;min-height:3.6rem}
+.scd-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem}
+.scd-next{font-size:.74rem;color:var(--ink-2)}
+.scd-mini{display:flex;flex-direction:column;gap:.2rem;font-size:.76rem}
+.scd-mini span{color:var(--ink-2)}
+.scd-mini small{font-size:.66rem;color:var(--muted)}
+.scd-cron{align-self:flex-start;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;background:#EEF0F3;border-radius:.3rem;padding:.1rem .4rem}

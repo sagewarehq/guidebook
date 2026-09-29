@@ -1,0 +1,107 @@
+/* Showing the work mock-ups (sw-): the run page, reasons, sources and their drawer, holds and flags, and history.
+   Builds on the Agent kit (ag-) and the app shell (as-). Red only for what’s held or wrong; green for sources and done. */
+
+/* run page */
+.sw-by{display:inline-flex;align-items:center;gap:.4rem}
+.sw-facts{display:flex;gap:1.6rem;padding:.55rem .8rem;border:1px solid var(--rule);border-radius:.4rem;background:#fff;font-size:.9rem;font-weight:700;font-variant-numeric:tabular-nums}
+.sw-facts span{display:flex;flex-direction:column}
+.sw-facts small{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.sw-box{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:.4rem;background:#fff;overflow:hidden}
+.sw-box.held{border-color:color-mix(in srgb,var(--alert) 35%,var(--rule))}
+.sw-box-h{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;padding:.45rem .7rem;border-bottom:1px solid var(--rule);background:#EEF0F3}
+.sw-box.held .sw-box-h{background:color-mix(in srgb,var(--alert) 6%,#fff)}
+.sw-box-h small{font-size:.64rem;color:var(--muted)}
+.sw-box>.ag-line:last-child,.sw-box>.sw-hold:last-child{border-bottom:0}
+.sw-box .ag-line{padding:.5rem .7rem}
+.sw-box .ag-line>p:first-child{font-size:.76rem}
+.sw-box .ag-why{font-size:.7rem}
+
+/* a held invoice, in full */
+.sw-hold{display:flex;flex-direction:column;gap:.3rem;padding:.6rem .7rem;border-bottom:1px solid var(--rule)}
+.sw-hold-h{display:flex;justify-content:space-between;gap:.6rem;font-size:.76rem;font-variant-numeric:tabular-nums}
+.sw-hold-h span{display:flex;align-items:center;gap:.45rem}
+.sw-hold-h .m-pill{font-size:.55rem;padding:0 .35rem}
+.sw-hold-h .m-link{font-size:.7rem}
+.sw-hold-why{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem}
+.sw-hold-why .ag-why{font-size:.72rem;color:var(--ink)}
+.sw-clears{display:flex;align-items:baseline;gap:.5rem;font-size:.7rem;color:var(--ink-2)}
+.sw-clears small{flex:none;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.sw-hold-acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.15rem}
+.sw-hold-acts .m-btn{font-size:.7rem;padding:.35rem .6rem}
+
+/* flags: paid, but look at it. Outlined, never red */
+.sw-flag{display:inline-flex;align-items:center;gap:.25rem;font-size:.55rem;font-weight:700;color:var(--ink);border:1px solid var(--ink);border-radius:99px;padding:0 .35rem;white-space:nowrap}
+.sw-flag-act{display:flex;align-items:center;gap:.4rem;margin-top:.2rem}
+.sw-flag-act .m-btn{font-size:.66rem;padding:.3rem .55rem}
+
+/* a record the viewer can’t open: counted, not named, not a link */
+.sw-locked{display:inline-block;font-size:.6rem;font-weight:600;color:var(--muted);border:1px dashed var(--rule);border-radius:.3rem;padding:0 .3rem;white-space:nowrap}
+.sw-leak{display:inline-block;font-size:.6rem;font-weight:600;color:var(--alert);border:1px solid color-mix(in srgb,var(--alert) 40%,transparent);border-radius:.3rem;padding:0 .3rem;white-space:nowrap}
+
+/* a drawer beside the work: the page behind makes room, so both stay readable */
+.sw-with-drawer,.sw-with-chat{width:100%;container-type:inline-size}
+.sw-with-drawer .as-a-grid,.sw-with-chat .as-a-grid{min-height:40rem}
+.sw-with-drawer .as-a-main{padding-right:max(22rem,40cqi)}
+.sw-with-chat .as-a-main{padding-right:max(21rem,40cqi)}
+.sw-drawer{position:absolute;z-index:3;top:0;right:0;bottom:0;width:max(22rem,40cqi);display:flex;flex-direction:column;gap:.7rem;padding:.9rem 1rem;background:#fff;border-left:1.2px solid var(--ink)}
+.sw-drawer-h{display:flex;justify-content:space-between;align-items:baseline;font-size:.95rem}
+.sw-drawer-h span{font-size:1.15rem;line-height:1;color:var(--ink-2)}
+.sw-drawer-s{margin-top:-.5rem;font-size:.72rem;color:var(--muted)}
+.sw-drawer-tabs{display:flex;gap:.3rem;flex-wrap:wrap}
+.sw-drawer-tabs span{font-size:.64rem;font-weight:600;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:.3rem;padding:.05rem .4rem}
+.sw-drawer-tabs span.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+.sw-drawer .m-tbl td,.sw-drawer .m-tbl th{font-size:.7rem}
+.sw-drawer .m-tbl th{font-size:.56rem}
+.sw-mark td{background:color-mix(in srgb,var(--accent) 10%,#fff)}
+.sw-note{font-size:.68rem;line-height:1.4;color:var(--ink-2);padding:.45rem .6rem;border-left:2px solid var(--accent);background:#EEF0F3}
+.sw-note.changed{border-left-color:var(--ink)}
+.sw-drawer .sw-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding-top:.5rem;border-top:1px solid var(--rule);font-size:.68rem;color:var(--muted)}
+.sw-src-on{outline:2px solid var(--accent);outline-offset:1px}
+
+/* a record page behind the chat */
+.sw-rec-note{font-size:.7rem;color:var(--ink-2)}
+.sw-rec-lines td{font-size:.74rem}
+
+/* reports: a figure with the reason under it */
+.sw-rpt td{font-size:.76rem;vertical-align:top}
+.sw-rpt .sw-chg{display:block;margin-top:.2rem;font-weight:400;font-size:.66rem;line-height:1.35;color:var(--ink-2);white-space:normal;text-align:left}
+.sw-rpt .sw-chg .m-ini{width:1rem;height:1rem;font-size:.42rem;margin-right:.35rem;vertical-align:-.2rem}
+.sw-rpt .sw-chg .m-ini i{display:none}
+.sw-rpt tr.sw-hi td{background:#EEF0F3}
+.sw-down{color:var(--alert)}
+
+/* history: the side panel of a record, wider for reasons */
+.sw-work{flex:1;display:grid;grid-template-columns:1fr 21rem}
+.sw-panel{gap:.7rem}
+.sw-hist{display:flex;flex-direction:column;gap:.75rem}
+.sw-hist .as-h{font-size:.74rem}
+.sw-hist .as-h>span{display:flex;flex-direction:column;gap:.12rem;min-width:0}
+.sw-hist .as-h small{font-size:.64rem}
+.sw-hist .ag-why{font-size:.68rem}
+.sw-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem;font-size:.62rem;color:var(--muted)}
+.sw-diff{display:inline-flex;gap:.3rem;font-size:.68rem;background:#fff;border-radius:.25rem;padding:0 .35rem}
+.sw-diff s{text-decoration:none;color:var(--muted)}
+
+/* the bad versions */
+.sw-conf{font-size:.6rem;font-weight:700;color:var(--ink-2);background:#EEF0F3;border-radius:.3rem;padding:0 .35rem;white-space:nowrap}
+.sw-para{font-size:.66rem;line-height:1.4;color:var(--ink-2)}
+.sw-dump{padding:.5rem .7rem;font-size:.66rem;color:var(--muted);border-top:1px solid var(--rule)}
+.sw-tint .as-h.sw-ai{background:color-mix(in srgb,var(--accent) 12%,#fff);border-radius:.3rem;padding:.3rem;font-style:italic}
+.sw-sys{width:20px;height:20px;border-radius:50%;background:#E3E6EB;flex:none;display:inline-flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--muted)}
+
+/* audit trail, Agents only */
+.sw-trail .au-row small .ag-why{font-size:.66rem}
+.sw-trail .au-row .ag-src{margin-left:.3rem}
+.sw-toggle-on i{background:var(--accent)}
+.sw-toggle-on i::after{left:12px}
+.sw-toggle-on{color:var(--accent);font-weight:600}
+
+/* small windows in a pair */
+.sw-mini{width:100%;display:flex;flex-direction:column;gap:.55rem}
+.sw-mini .sw-box{font-size:.74rem}
+.sw-rpt tr.sw-top td{border-bottom:0;padding-bottom:0}
+.sw-rpt tr.sw-top+tr td{padding-top:.1rem}
+.sw-rpt tr.sw-hi td:first-child{padding-left:.4rem}
+.sw-with-drawer .as-meta,.sw-with-chat .as-meta{white-space:normal;flex-wrap:wrap}
+.sw-with-drawer .as-a-grid{min-height:34rem}
+.sw-with-chat .ag-held>div:first-child .ag-src:first-of-type{outline:2px solid var(--accent);outline-offset:1px}

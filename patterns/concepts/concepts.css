@@ -1,0 +1,97 @@
+/* Key concepts (kc-): the words table on The words we use, and the path of one run on From ask to trail.
+   Drawings reuse the Agent kit (ag-); these styles only lay them out, small and calm. */
+
+/* the words: one row per word, a meaning, a tiny drawing of how it looks on screen, and where it's covered */
+.kc-terms{width:100%;border-collapse:collapse;font-size:.92rem}
+.kc-terms th{text-align:left;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);padding:0 14px 8px 0;border-bottom:1.5px solid var(--ink)}
+.kc-terms td{padding:12px 14px 12px 0;border-bottom:1px solid var(--rule);vertical-align:middle;color:var(--ink-2);line-height:1.45}
+.kc-terms td:first-child{width:8.5rem;font-weight:700;color:var(--ink)}
+.kc-terms td:nth-child(3){width:19rem}
+.kc-terms td:last-child{width:10rem;font-size:.84rem}
+.kc-terms td small{display:block;font-size:.78rem;color:var(--muted);font-weight:500}
+
+/* the little screen each word appears on */
+.kc-on{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;min-height:2.6rem;padding:.45rem .6rem;background:#fff;border:1px solid var(--rule);border-radius:.4rem;font-size:.72rem;color:var(--ink);line-height:1.3}
+.kc-on .m-btn{font-size:.68rem;padding:.3rem .55rem}
+.kc-on .m-pill{font-size:.62rem;padding:.2rem .45rem}
+.kc-on .m-ini{width:1.35rem;height:1.35rem;font-size:.55rem}
+.kc-on .m-ini i{font-size:.42rem;right:-.4rem}
+.kc-on small{font-size:.64rem;color:var(--muted)}
+.kc-who{display:flex;flex-direction:column;line-height:1.25;margin-left:.2rem}
+.kc-who b{font-size:.74rem}
+.kc-perm{display:grid;grid-template-columns:1fr auto;gap:.15rem .8rem;width:100%}
+.kc-perm span:nth-child(even){font-weight:700;text-align:right}
+.kc-perm .no{color:var(--muted);font-weight:500}
+.kc-box{display:flex;flex-direction:column;gap:.2rem;width:100%;border:1px solid var(--ink-2);border-radius:.3rem;padding:.3rem .45rem}
+.kc-box small{color:var(--muted)}
+.kc-meter{display:flex;flex-direction:column;gap:.25rem;width:100%}
+.kc-meter p{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.kc-meter i{display:block;height:.35rem;border-radius:99px;background:#EEF0F3;overflow:hidden}
+.kc-meter i::before{content:"";display:block;height:100%;width:var(--kc-fill);background:var(--accent)}
+.kc-on .ag-steps li{font-size:.68rem}
+
+/* the path: six steps across, then a drawing of each step's screen */
+.kc-path{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:0 0 1.2rem}
+.kc-path>i{font-style:normal;color:var(--muted);font-size:.8rem}
+.kc-step{display:inline-flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:700;padding:.3rem .6rem;border-radius:.3rem;border:1.5px solid var(--ink);background:#fff;color:var(--ink);white-space:nowrap}
+.kc-step em{font-style:normal;font-weight:500;color:var(--muted)}
+.kc-step.agent{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,#fff)}
+.kc-step.sys{border-color:var(--rule);color:var(--ink-2)}
+.kc-step.skip{border:1.5px dashed var(--rule);color:var(--muted);background:transparent;font-weight:500}
+
+.kc-life{width:100%;display:flex;flex-direction:column}
+.kc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.kc-cell{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.kc-cell-h{display:flex;align-items:center;gap:.45rem;font-size:.8rem}
+.kc-cell-h .m-pin{flex:none}
+.kc-cell-h b{font-size:.84rem}
+.kc-cell-h span{margin-left:auto;display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;color:var(--ink-2)}
+.kc-cell-h .m-ini{width:1.2rem;height:1.2rem;font-size:.5rem}
+.kc-cell-h .m-ini i{font-size:.4rem;right:-.4rem}
+.kc-scr{flex:1;display:flex;flex-direction:column;gap:.45rem;min-height:11.5rem;padding:.65rem .75rem;background:#fff;border:1.2px solid var(--ink);border-radius:.5rem;font-size:.72rem;line-height:1.4}
+.kc-scr>.m-k{font-size:.58rem}
+.kc-scr .ag-me{max-width:100%}
+.kc-scr .ag-card-h b{font-size:.74rem}
+.kc-scr .ag-facts{gap:.7rem;font-size:.72rem;padding:.45rem .6rem}
+.kc-scr .ag-acts{padding:.45rem .6rem}
+.kc-scr .m-btn{font-size:.68rem;padding:.35rem .6rem}
+.kc-scr .m-tbl{font-size:.68rem}
+.kc-scr .m-tbl td{padding:.3rem .4rem .3rem 0}
+.kc-scr .m-pill{font-size:.58rem;padding:.2rem .4rem}
+.kc-scr .as-h{font-size:.68rem}
+.kc-conf{display:flex;flex-direction:column;gap:.35rem}
+.kc-conf .m-title{font-size:.95rem}
+.kc-conf p{color:var(--ink-2)}
+.kc-conf .kc-btns{display:flex;gap:.4rem;margin-top:.2rem}
+.kc-cell>small{font-size:.74rem;color:var(--ink-2)}
+.g-when .kc-path{margin:0;flex-wrap:nowrap}
+.g-when .kc-step{font-size:.66rem;padding:.2rem .4rem}
+
+/* Sessions at the same time (ks-): the Agents window's sessions column with counts, what each session is doing,
+   a record read by one session and changed by another, and a short claim on a bank send. Reuses wh- and kc-. */
+.wh-ws.ks-two{grid-template-columns:1fr 17rem}
+.ks-ags{display:flex;flex-direction:column;gap:.15rem;padding-bottom:.6rem;margin-bottom:.5rem;border-bottom:1px solid var(--rule)}
+.ks-ag{display:flex;align-items:center;gap:.5rem;padding:.35rem .4rem;border-radius:.3rem}
+.ks-ag.on{background:#EEF0F3}
+.ks-ag span{min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.ks-ag b{font-size:.74rem}
+.ks-ag small{font-size:.62rem;color:var(--ink-2)}
+.ks-tog{font-size:.64rem;color:var(--muted);font-weight:500}
+.ks-tog b{color:var(--ink);font-size:.64rem}
+.ks-grp{margin:.45rem .4rem .1rem;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.wh-s .m-ini{width:1.35rem;height:1.35rem;font-size:.52rem}
+.ks-now{display:flex;flex-direction:column;gap:.55rem;padding:.7rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.72rem}
+.ks-now>p{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem;color:var(--ink)}
+.ks-now>p span{display:flex;flex-direction:column;line-height:1.3}
+.ks-now>p small{font-size:.62rem;color:var(--muted)}
+.ks-now>p b{font-weight:600;color:var(--ink-2);white-space:nowrap}
+.ks-note{font-size:.64rem;color:var(--muted)}
+.ks-ver{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:.55rem .65rem;background:#EEF0F3;border-radius:.4rem;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums}
+.ks-ver small{display:block;font-size:.6rem;font-weight:500;color:var(--muted)}
+.ks-hist{display:flex;flex-direction:column;gap:.55rem;padding-top:.6rem;border-top:1px solid var(--rule)}
+.ks-hist .as-h{font-size:.7rem}
+.ks-hist .m-pill,.kc-scr .as-h .m-pill{font-size:.56rem;padding:.15rem .35rem;margin-left:.2rem}
+.ks-send{display:flex;flex-direction:column;gap:.25rem;padding:.6rem .7rem;border:1.2px solid var(--ink);border-radius:.4rem;font-size:.72rem;color:var(--ink-2);line-height:1.4}
+.ks-send b{color:var(--ink);font-size:.8rem}
+.wh-detail>.kc-meter{font-size:.7rem}
+.wh-ws.ks-three{grid-template-columns:16rem 1fr 14rem}

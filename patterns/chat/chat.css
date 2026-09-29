@@ -1,0 +1,263 @@
+/* Chat chapter mock-ups (ct-), on top of the Agent kit (ag-, agents.css). Green marks done or chosen; red only held,
+   flagged, paused, or an Avoid example’s mistake. */
+
+/* frame wrappers, full width of the stage; heights:  the kit’s panel frame is tall for a long approval card; most chats here are shorter */
+.ct-short,.ct-mid,.ct-rec{width:100%}
+.ct-short .ag-has-panel .as-a-grid{min-height:36rem}
+.ct-mid .ag-has-panel .as-a-grid{min-height:44rem}
+
+/* the top-bar button that opens the chat panel */
+.ct-open{font-size:.7rem;font-weight:700;color:var(--ink-2);border:1px solid var(--rule);border-radius:.3rem;padding:.2rem .55rem;white-space:nowrap}
+.ct-open.on{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,#fff)}
+
+/* a chat panel on its own, outside the app frame, for side-by-side examples */
+.ct-box{position:relative;width:100%;height:23rem;border:1.2px solid var(--ink);border-radius:.5rem;overflow:hidden;background:#fff}
+.ct-box.tall{height:30rem}
+.ct-box .ag-panel{width:100%;min-width:0;border-left:0}
+
+/* a quiet page under the panel, for pages the shell kit doesn’t draw */
+.ct-under{display:flex;flex-direction:column;gap:.7rem;padding:1rem}
+.ct-under .m-title{white-space:nowrap}
+
+/* phone */
+.ct-phones{display:flex;align-items:center;justify-content:center;gap:1rem}
+.ct-phone{position:relative;flex:none;width:17rem;height:31rem;border:1.5px solid var(--ink);border-radius:1.6rem;background:#fff;overflow:hidden}
+.ct-notch{position:absolute;z-index:4;top:.4rem;left:50%;transform:translateX(-50%);width:3.5rem;height:.5rem;border-radius:.4rem;background:var(--ink)}
+.ct-screen{position:absolute;top:1.2rem;left:0;right:0;bottom:0}
+.ct-screen .ag-panel{width:100%;min-width:0;border-left:0}
+.ct-screen .ag-head{padding:.55rem .7rem}
+.ct-screen .ag-who small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ct-screen .ag-feed{padding:.5rem .7rem}
+.ct-screen .ag-in{margin:0 .7rem .7rem}
+.ct-ph-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:.5rem .7rem;border-bottom:1px solid var(--rule);font-size:.74rem}
+.ct-ph-top>:last-child{justify-self:end}
+.ct-ph-body{display:flex;flex-direction:column;gap:.55rem;padding:.7rem}
+.ct-ph-body .m-title{font-size:1rem}
+.ct-tap{box-shadow:0 0 0 .3rem color-mix(in srgb,var(--accent) 22%,transparent)}
+.ct-arrow{font-size:.74rem;font-weight:600;color:var(--accent);text-align:center;line-height:1.5}
+
+/* notes inside a feed: paused, saved on a record */
+.ct-note{align-self:stretch;font-size:.66rem;line-height:1.4;color:var(--ink-2);background:#EEF0F3;border-radius:.3rem;padding:.35rem .55rem}
+.ct-note.bad{color:var(--alert);background:color-mix(in srgb,var(--alert) 7%,#fff)}
+
+/* asking: suggested asks, the composer, mentions, attachments */
+.ct-sugg{display:flex;flex-direction:column;align-items:flex-start;gap:.3rem}
+.ct-sugg small{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.ct-sugg span{font-size:.7rem;font-weight:600;color:var(--ink);border:1px solid var(--rule);border-radius:.9rem;padding:.25rem .65rem;background:#fff}
+.ct-comp{display:flex;flex-direction:column;gap:.55rem;border:1px solid var(--ink);border-radius:.5rem;padding:.7rem .75rem;background:#fff;font-size:.8rem;line-height:1.5}
+.ct-files{display:flex;flex-wrap:wrap;gap:.4rem}
+.ct-file{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;border:1px solid var(--rule);border-radius:.3rem;padding:.25rem .45rem;background:#EEF0F3}
+.ct-file b{font-weight:600;color:var(--ink)}
+.ct-file small{color:var(--muted)}
+.ct-file i{font-style:normal;color:var(--muted)}
+.ct-ment{display:inline-block;font-size:.92em;font-weight:600;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,#fff);border-radius:.25rem;padding:0 .3rem;white-space:nowrap}
+.ag-me .ct-ment{color:var(--accent-soft);background:color-mix(in srgb,var(--accent-soft) 18%,transparent)}
+.ct-caret{display:inline-block;width:1px;height:1em;vertical-align:-.15em;background:var(--ink);margin-left:1px}
+.ct-comp-bar{display:flex;align-items:center;gap:.8rem;font-size:.7rem;font-weight:600;color:var(--ink-2)}
+.ct-comp-bar .ct-send{margin-left:auto;font-weight:800;color:#fff;background:var(--ink);border-radius:.3rem;padding:.1rem .5rem}
+.ct-menu{display:flex;flex-direction:column;border:1px solid var(--ink);border-radius:.4rem;background:#fff;overflow:hidden;font-size:.72rem}
+.ct-menu p{display:flex;justify-content:space-between;gap:.8rem;padding:.35rem .6rem;border-bottom:1px solid var(--rule)}
+.ct-menu p:last-child{border-bottom:0}
+.ct-menu p.on{background:#EEF0F3}
+.ct-menu b{font-weight:700}
+.ct-menu span{color:var(--muted);font-variant-numeric:tabular-nums}
+.ct-menu .m-k{padding:.35rem .6rem 0;border:0}
+.ct-stack{width:100%;display:flex;flex-direction:column;gap:.6rem}
+.ct-qs{margin:0;padding-left:1.1rem;list-style:decimal;display:flex;flex-direction:column;gap:.15rem}
+.ct-blank{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;text-align:center}
+.ct-blank .ct-sugg{align-items:center}
+.ct-blank b{font-family:var(--serif);font-weight:400;font-size:1.1rem}
+
+/* replies: folded steps, pinned parts, what’s next, a wall of text */
+.ct-fold{align-self:flex-start;font-size:.66rem;font-weight:600;color:var(--ink-2);border:1px solid var(--rule);border-radius:.3rem;padding:.12rem .45rem}
+.ct-fold i{font-style:normal;font-weight:800;color:var(--accent);margin-right:.3rem}
+.ct-part{display:flex;align-items:flex-start;gap:.45rem}
+.ct-part>.m-pin{margin-top:.05rem;width:1.05rem;height:1.05rem;font-size:.58rem}
+.ct-part>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:.3rem}
+.ct-next{border-top:1px solid var(--rule);padding-top:.4rem}
+.ct-next b{font-weight:700}
+.ct-acts{display:flex;flex-wrap:wrap;gap:.35rem}
+.ct-acts .m-btn{font-size:.66rem;padding:.3rem .55rem}
+.ct-stop{display:flex;align-items:center;gap:.5rem;font-size:.66rem;color:var(--muted)}
+.ct-stop .m-btn{font-size:.62rem;padding:.2rem .5rem}
+.ct-wall p{font-size:.72rem;line-height:1.5}
+
+/* asking back: waiting, the answer recorded, the Agents list */
+.ct-wait{font-size:.64rem;color:var(--muted)}
+.ct-chose{align-self:flex-end;font-size:.64rem;color:var(--ink-2)}
+.ct-chose b{color:var(--accent)}
+.ct-agents td{font-size:.74rem;vertical-align:top}
+.ct-agents td small{display:block;font-size:.66rem;color:var(--muted)}
+.ct-agents tr.ag-wait td{background:color-mix(in srgb,var(--accent) 6%,#fff)}
+.ct-agents .m-btn{font-size:.66rem;padding:.25rem .55rem;margin-top:.25rem}
+.ct-hist{display:flex;flex-direction:column;gap:.6rem;padding:.2rem 0}
+.ct-hist .as-h{font-size:.74rem}
+
+/* cards: a table and bars in chat, drawn with the app’s parts */
+.ct-card{display:flex;flex-direction:column;border:1px solid var(--ink);border-radius:.5rem;background:#fff;overflow:hidden}
+.ct-card-h{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;padding:.5rem .7rem;border-bottom:1px solid var(--rule)}
+.ct-card-h b{font-size:.78rem}
+.ct-card-h small{font-size:.62rem;color:var(--muted);white-space:nowrap}
+.ct-card-b{display:flex;flex-direction:column;gap:.6rem;padding:.6rem .7rem}
+.ct-card-f{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;padding:.5rem .7rem;border-top:1px solid var(--rule);font-size:.66rem}
+.ct-bars{display:grid;grid-template-columns:repeat(4,1fr);align-items:end;gap:.6rem;height:7.5rem;padding-bottom:.1rem;border-bottom:1.5px solid var(--ink)}
+.ct-bar{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;gap:.2rem;text-decoration:none}
+.ct-bar b{font-size:.62rem;font-weight:700;text-align:center;color:var(--accent);text-decoration:underline;text-underline-offset:2px;font-variant-numeric:tabular-nums}
+.ct-bar em{display:block;background:var(--rule);border-radius:.15rem .15rem 0 0}
+.ct-bar.on em{background:var(--ink)}
+.ct-axis{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;font-size:.6rem;color:var(--muted);text-align:center;margin-top:-.4rem}
+.ct-tbl td,.ct-tbl th{font-size:.68rem}
+.ct-tbl th{font-size:.56rem}
+.ct-tbl td:first-child{font-weight:500}
+.ct-tbl tfoot td{font-weight:700;border-top:1.5px solid var(--ink);border-bottom:0}
+.ct-donut{align-self:center;width:8rem;height:8rem;border-radius:50%;background:conic-gradient(var(--accent) 0 41%,var(--alert) 41% 78%,var(--ink-2) 78% 100%);display:grid;place-items:center}
+.ct-donut span{width:4.6rem;height:4.6rem;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:.62rem;line-height:1.2;color:var(--muted)}
+.ct-donut b{display:block;font-size:1.05rem;color:var(--ink)}
+.ct-legend{display:flex;flex-wrap:wrap;gap:.3rem .8rem;font-size:.64rem;color:var(--ink-2)}
+.ct-legend i.a{background:var(--accent)}
+.ct-legend i.b{background:var(--alert)}
+.ct-legend i.c{background:var(--ink-2)}
+.ct-legend i{display:inline-block;width:.55rem;height:.55rem;border-radius:.15rem;margin-right:.3rem;vertical-align:-.05rem}
+
+/* open the real screen: a summary in chat, and the run page */
+.ct-sum .ag-facts{border-bottom:0}
+.ct-run{max-width:23rem}
+.ct-run .as-a-head .m-title{white-space:nowrap}
+.ct-run td{font-size:.7rem;vertical-align:top}
+.ct-run td small{display:block;font-size:.62rem;color:var(--ink-2);line-height:1.35}
+.ct-run tfoot td{font-weight:700;border-top:1.5px solid var(--ink)}
+.ct-long td{font-size:.64rem;padding-top:.25rem;padding-bottom:.25rem}
+.ct-more{font-size:.64rem;color:var(--muted);text-align:center}
+
+/* chat on a record: the side panel’s Conversations, and someone else’s message in a thread */
+.ct-rec .as-a-work{grid-template-columns:1fr 15rem}
+.ct-thread{display:flex;flex-direction:column;gap:.35rem;background:#fff;border:1px solid var(--rule);border-radius:.4rem;padding:.5rem .55rem;font-size:.68rem;line-height:1.4}
+.ct-thread.on{border-color:var(--accent);box-shadow:0 0 0 .2rem color-mix(in srgb,var(--accent) 18%,transparent)}
+.ct-thread-h{display:flex;align-items:center;gap:.35rem}
+.ct-thread-h .m-ini{width:1.15rem;height:1.15rem;font-size:.48rem}
+.ct-thread-h .m-ini i{font-size:.38rem;right:-.35rem}
+.ct-thread-h b{margin-left:.3rem}
+.ct-thread p{color:var(--ink-2)}
+.ct-thread small{color:var(--muted);font-size:.62rem}
+.ct-other{display:flex;align-items:flex-start;gap:.4rem;max-width:85%}
+.ct-other .m-ini{width:1.25rem;height:1.25rem;font-size:.52rem}
+.ct-other p{font-size:.74rem;line-height:1.4;background:#EEF0F3;border-radius:.6rem .6rem .6rem .15rem;padding:.4rem .65rem}
+.ct-other small{display:block;font-size:.6rem;font-weight:700;color:var(--muted)}
+
+/* what the Agent can see: the context box above the message box, activity sharing, and the list to trim */
+.ct-ctx{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:.4rem;background:#fff;font-size:.68rem}
+.ct-ctx-h{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.35rem .55rem;border-bottom:1px solid var(--rule);font-weight:700}
+.ct-ctx-h small{font-weight:500;color:var(--muted)}
+.ct-ctx p.ct-row{display:flex;align-items:baseline;gap:.5rem;padding:.3rem .55rem;border-bottom:1px solid var(--rule)}
+.ct-row>small{flex:none;width:4.2rem;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.ct-row>span{flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:.25rem}
+.ct-row>i{flex:none;font-style:normal;color:var(--muted)}
+.ct-row.off>span{color:var(--muted)}
+.ct-ctx-f{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.35rem .55rem;color:var(--ink-2)}
+.ct-sw{display:inline-flex;align-items:center;gap:.35rem;font-weight:600;white-space:nowrap}
+.ct-sw i{position:relative;width:1.5rem;height:.85rem;border-radius:.5rem;background:var(--rule)}
+.ct-sw i::after{content:"";position:absolute;top:.1rem;left:.1rem;width:.65rem;height:.65rem;border-radius:50%;background:#fff}
+.ct-sw.on{color:var(--accent)}
+.ct-sw.on i{background:var(--accent)}
+.ct-sw.on i::after{left:.75rem}
+.ct-acts-list{display:flex;flex-direction:column}
+.ct-acts-list p{display:flex;align-items:baseline;gap:.45rem;padding:.28rem .55rem;border-bottom:1px solid var(--rule)}
+.ct-acts-list p small{flex:none;width:3.3rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ct-acts-list p span{flex:1}
+.ct-acts-list p.off span{color:var(--muted)}
+.ct-cb{flex:none;align-self:center;width:.7rem;height:.7rem;border:1.2px solid var(--ink-2);border-radius:.15rem}
+.ct-cb.on{background:var(--accent);border-color:var(--accent)}
+
+/* record and chat, full screen (fv-): a slim strip, the record about two thirds on the left, the chat a third on the right */
+.fv .m-win-b{padding:0;gap:0}
+.fv-top{display:flex;align-items:center;gap:1rem;padding:.55rem 1rem;border-bottom:1px solid var(--rule)}
+.fv-back{flex:none;font-size:.76rem;font-weight:700;color:var(--ink-2);text-decoration:none}
+.fv-name{flex:1;min-width:0;display:flex;align-items:baseline;gap:.6rem;white-space:nowrap;overflow:hidden}
+.fv-name b{font-size:.86rem}
+.fv-name small{font-size:.7rem;color:var(--muted)}
+.fv-top .m-btn{font-size:.7rem;padding:.3rem .6rem}
+.fv-body{display:grid;grid-template-columns:minmax(0,65fr) minmax(0,35fr);min-height:44rem}
+.fv-rec{display:flex;flex-direction:column;gap:.8rem;padding:1.1rem 1.3rem 1rem;min-width:0}
+.fv-chat{display:flex;flex-direction:column;min-width:0;border-left:1.2px solid var(--ink);background:#fff}
+.fv-ch{display:flex;align-items:center;gap:.6rem;padding:.7rem .9rem;border-bottom:1px solid var(--rule)}
+.fv-chat .ag-feed{justify-content:flex-end}
+.fv-typed span{color:var(--ink)}
+.fv-ev{align-self:center;font-size:.64rem;color:var(--muted);text-align:center}
+.fv-ev b{color:var(--accent);font-weight:700}
+
+/* the record: heading, three numbers, which lines, one table, a foot */
+.fv-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.fv-head .m-title{white-space:nowrap}
+.fv-facts{display:flex;gap:2.2rem;font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums}
+.fv-facts span{display:flex;flex-direction:column}
+.fv-facts small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.fv-ok{color:var(--accent)}
+.fv-views{display:flex;gap:1.1rem;font-size:.76rem;font-weight:600;color:var(--muted);border-bottom:1px solid var(--rule)}
+.fv-views span{padding-bottom:.4rem}
+.fv-views span.on{color:var(--ink);box-shadow:0 2px 0 var(--ink)}
+.fv-views em{font-style:normal;font-size:.66rem;margin-left:.3rem;color:var(--muted)}
+.fv-tbl td{font-size:.76rem;font-variant-numeric:tabular-nums;padding-top:.4rem;padding-bottom:.4rem}
+.fv-tbl tr:not(.fv-sub):not(.fv-gap) td{white-space:nowrap}
+.fv-tbl tr:not(.fv-sub) td:first-child{width:3.6rem;white-space:nowrap;color:var(--ink-2)}
+.fv-tbl tr:not(.fv-sub) td:nth-child(2){width:3.6rem;white-space:nowrap}
+.fv-tbl tr.fv-hot td{border-bottom:0}
+.fv-tbl tr.fv-sub td{padding-top:0;border-bottom:1px solid var(--rule)}
+.fv-tbl tr.fv-gap td{font-size:.7rem;font-weight:500;color:var(--muted);text-align:center;background:#EEF0F3;padding:.25rem 0}
+.fv-tbl tr:has(+ .fv-sub) td{border-bottom:0}
+.fv-none{color:var(--muted)}
+.fv-bad{color:var(--alert);font-weight:600}
+.fv-find{display:flex;align-items:baseline;gap:.5rem;font-size:.74rem;line-height:1.4;color:var(--ink-2)}
+.fv-find b{color:var(--ink)}
+.fv-find .m-pill{flex:none;font-size:.58rem;padding:.1rem .4rem}
+.fv-foot{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;margin-top:auto;padding-top:.8rem;border-top:1px solid var(--rule)}
+.fv-foot small{margin-right:auto;font-size:.7rem;color:var(--muted)}
+
+/* a drafted change, marked in the record under the line it fixes */
+.fv-draft{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.3rem 1rem;padding:.4rem .6rem;border:1.2px dashed var(--accent);border-radius:.4rem;background:color-mix(in srgb,var(--accent) 5%,#fff)}
+.fv-draft>div{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.fv-dh{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .45rem;font-size:.78rem}
+.fv-dh b{font-weight:600}
+.fv-dh em{font-style:normal;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent);border:1px solid var(--accent);border-radius:.25rem;padding:0 .3rem}
+.fv-dh small{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.fv-dh i{font-style:normal;font-size:.62rem;font-weight:700;color:var(--accent)}
+.fv-da{display:flex;gap:.3rem}
+.fv-da .m-btn,.fv-opts .m-btn{font-size:.64rem;padding:.25rem .5rem}
+.fv-opts{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.25rem}
+.fv-draft.approved{border-style:solid;border-color:var(--rule);background:#fff}
+.fv-draft.approved .fv-dh em{color:#fff;background:var(--accent)}
+.fv-draft.changed{border-style:solid;box-shadow:0 0 0 .2rem color-mix(in srgb,var(--accent) 16%,transparent)}
+.fv-draft.ask{grid-template-columns:1fr;border-color:var(--ink-2);background:#EEF0F3}
+.fv-draft.ask .fv-dh em{color:var(--ink-2);border-color:var(--ink-2)}
+
+/* focus page: a slice of the record, for the Do / Avoid pair */
+.fv-mini{display:flex;flex-direction:column;gap:.7rem;padding:.9rem 1rem;border:1.2px solid var(--ink);border-radius:.5rem;background:#fff;width:100%}
+.fv-mini .ag-msg{border-top:1px solid var(--rule);padding-top:.6rem}
+
+/* inline Agent notes (inl-): one line pinned to a row, a field, or a section, and a drafted change in place */
+.inl-note{display:flex;align-items:center;gap:.5rem;font-size:.74rem;line-height:1.35;color:var(--ink-2);padding:.35rem .6rem;border-radius:.35rem;background:color-mix(in srgb,var(--accent) 7%,#fff);box-shadow:inset 2px 0 0 var(--accent)}
+.inl-note>span:not(.ag-ava):not(.inl-x){flex:1;min-width:0}
+.inl-note b{color:var(--ink);font-weight:700}
+.inl-note .m-link{flex:none;font-size:.7rem;font-weight:600}
+.inl-x{flex:none;font-size:.95rem;line-height:1;color:var(--muted)}
+.inl-tbl tr:has(+ .inl-sub) td{border-bottom:0}
+.inl-tbl tr.inl-sub td{padding-top:0;font-weight:400}
+.inl-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.4rem}
+.inl-f{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.inl-f>small{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.inl-f>b{font-size:.86rem;font-weight:600;font-variant-numeric:tabular-nums}
+.inl-f.hot>b{align-self:flex-start;border-bottom:1.5px dashed var(--accent)}
+.inl-f .inl-note{margin-top:.15rem}
+.inl-grid .inl-f:has(.inl-note){grid-column:1 / -1}
+.inl-draft{display:flex;flex-direction:column;gap:.45rem;padding:.55rem .7rem;border:1.2px dashed var(--accent);border-radius:.4rem;background:color-mix(in srgb,var(--accent) 5%,#fff)}
+.inl-draft>div{display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.inl-dh{display:flex;align-items:center;gap:.45rem;font-size:.78rem}
+.inl-dh em{font-style:normal;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent);border:1px solid var(--accent);border-radius:.25rem;padding:0 .3rem}
+.inl-dh b{font-weight:600}
+.inl-da{display:flex;align-items:center;gap:.3rem}
+.inl-da .m-btn{font-size:.64rem;padding:.25rem .5rem}
+.inl-da .m-link{font-size:.68rem;font-weight:600;margin-left:auto;white-space:nowrap}
+.inl-under{width:58%;display:flex;flex-direction:column;gap:.7rem;padding:1rem;min-width:0}
+.inl-under .m-title{white-space:nowrap}
+.inl-box{width:100%;height:19rem;display:flex;flex-direction:column;gap:.8rem;padding:1rem;border:1.2px solid var(--ink);border-radius:.5rem;background:#fff;overflow:hidden}
+.inl-thread{display:flex;flex-direction:column;gap:.45rem;padding:.6rem;border:1px solid var(--rule);border-radius:.4rem;background:#EEF0F3}
+.inl-thread .ag-in{margin:0;background:#fff}

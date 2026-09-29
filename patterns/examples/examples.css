@@ -1,0 +1,189 @@
+/* Examples: worked workflows. */
+
+/* ===== Writer A (exa-): reconcile, slicing, lookup, intake ===== */
+
+/* short frames: with a chat panel, the analysis window, and the full-screen view */
+.exa-mid,.exa-short,.exa-fv{width:100%}
+.exa-mid .ag-has-panel .as-a-grid{min-height:30rem;container-type:inline-size}
+.exa-short .an-ws{min-height:27rem}
+.exa-fv .fv-body{min-height:0;height:30rem}
+.exa-fv .fv-rec{position:relative;overflow:hidden}
+.exa-fv-more{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 1.3rem;background:#fff;border-top:1px solid var(--rule);font-size:.72rem;color:var(--ink-2)}
+
+/* the quiet page under a chat panel */
+.exa-under{width:calc(60cqw - 170px);display:flex;flex-direction:column;gap:.7rem;padding:1rem;min-width:0}
+.exa-under .m-title{white-space:nowrap}
+
+/* the workflow and time tables */
+.exa-who{font-weight:600;white-space:nowrap}
+.exa-who.ag{color:var(--accent)}
+.exa-good{color:var(--accent)}
+.exa-saves .g-when tr:last-child td{border-top:1.5px solid var(--ink)}
+
+/* an attached file, in a message */
+.exa-file{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;border:1px solid var(--rule);border-radius:.3rem;padding:.25rem .45rem;background:#EEF0F3;color:var(--ink-2)}
+.exa-file i{font-style:normal;color:var(--ink)}
+.exa-file b{font-weight:600;color:var(--ink)}
+.exa-file small{color:var(--muted)}
+.ag-me .exa-file{background:#fff}
+.exa-files{align-self:flex-end;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.35rem;margin-right:1.7rem}
+
+/* a drawer’s parts: a heading with facts, a quiet table, a foot with actions */
+.exa-dr{display:flex;flex-direction:column;gap:.8rem;min-height:0;flex:1}
+.exa-tbl{width:100%;border-collapse:collapse;font-size:.72rem;font-variant-numeric:tabular-nums}
+.exa-tbl th{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);text-align:left;padding:0 .5rem .35rem 0;border-bottom:1.5px solid var(--ink);white-space:nowrap}
+.exa-tbl td{padding:.38rem .5rem .38rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.exa-tbl td small{display:block;font-size:.62rem;color:var(--muted)}
+.exa-tbl .r{text-align:right;white-space:nowrap}
+.exa-tbl tfoot td{font-weight:800;border-top:1.5px solid var(--ink);border-bottom:none}
+.exa-tbl .tot{background:color-mix(in srgb,var(--ink) 4%,transparent);padding-left:.5rem;font-weight:700}
+.exa-tbl .ok{color:var(--accent);font-weight:700}
+.exa-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:.4rem;margin-top:auto;padding-top:.7rem;border-top:1px solid var(--rule)}
+.exa-foot small{margin-right:auto;font-size:.66rem;color:var(--muted)}
+
+
+/* Slicing: the bars, as on Home and in Reports */
+.exa-bars{display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:2.4rem;height:11rem;padding:0 2.4rem .1rem;border-bottom:1.5px solid var(--ink)}
+.exa-bar{height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:.25rem;text-decoration:none}
+.exa-bar b{font-size:.66rem;font-weight:700;text-align:center;color:var(--accent);text-decoration:underline;text-underline-offset:2px;font-variant-numeric:tabular-nums}
+.exa-bar em{display:block;background:var(--rule);border-radius:.15rem .15rem 0 0}
+.exa-bar.on em{background:var(--ink)}
+.exa-axis{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;padding:0 2.4rem;font-size:.64rem;color:var(--muted);text-align:center}
+.exa-changed{font-size:.64rem;color:var(--ink-2)}
+.exa-changed b{color:var(--accent);font-weight:700}
+
+/* Lookup: the summary card in chat */
+.exa-sum{display:flex;flex-direction:column;border:1px solid var(--ink);border-radius:.5rem;background:#fff;overflow:hidden}
+.exa-sum-h{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;padding:.55rem .7rem;border-bottom:1px solid var(--rule)}
+.exa-sum-h b{font-size:.8rem}
+.exa-sum-h small{font-size:.64rem;color:var(--muted)}
+.exa-sum .ag-facts{border-bottom:1px solid var(--rule)}
+.exa-sum-l{display:flex;flex-direction:column;padding:.2rem .7rem}
+.exa-sum-l p{display:grid;grid-template-columns:5.6rem minmax(0,1fr);gap:.6rem;padding:.32rem 0;border-bottom:1px solid var(--rule);font-size:.7rem;line-height:1.4}
+.exa-sum-l p:last-child{border-bottom:0}
+.exa-sum-l p>small{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);padding-top:.15rem}
+.exa-sum-l .m-pill{font-size:.55rem;padding:0 .35rem;margin-left:.3rem}
+.exa-sum-f{display:flex;align-items:center;gap:.4rem;padding:.55rem .7rem;border-top:1px solid var(--rule)}
+.exa-sum-f small{font-size:.62rem;color:var(--muted)}
+
+/* Intake: the draft form beside the photographed page */
+.exa-intake{flex:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);border-top:1px solid var(--rule)}
+.exa-form{display:flex;flex-direction:column;gap:.8rem;padding:1rem 1.1rem;min-width:0}
+.exa-banner{font-size:.72rem;line-height:1.45;color:var(--ink-2);background:color-mix(in srgb,var(--accent) 10%,#fff);border-radius:.35rem;padding:.45rem .7rem;box-shadow:inset 3px 0 0 var(--accent)}
+.exa-banner b{color:var(--ink)}
+.exa-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem .9rem}
+.exa-fld{position:relative;display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.exa-fld .m-field{gap:.2rem}
+.exa-from{display:flex;align-items:center;gap:.3rem;font-size:.6rem;color:var(--muted)}
+.exa-from .m-pin{position:static;width:.95rem;height:.95rem;font-size:.52rem}
+.exa-miss{font-size:.7rem;line-height:1.4;color:var(--ink-2);padding:.45rem .65rem;border:1px solid color-mix(in srgb,var(--alert) 45%,transparent);border-radius:.35rem;background:color-mix(in srgb,var(--alert) 4%,#fff)}
+.exa-miss b{color:var(--alert)}
+.exa-bar2{display:flex;align-items:center;gap:.4rem;margin-top:auto;padding-top:.7rem;border-top:1px solid var(--rule)}
+.exa-bar2 .as-grow{flex:1}
+.exa-bar2 small{font-size:.64rem;color:var(--muted)}
+.exa-scan{display:flex;flex-direction:column;gap:.6rem;padding:1rem 1.1rem;background:#EEF0F3;border-left:1px solid var(--rule);min-width:0}
+.exa-scan-h{display:flex;justify-content:space-between;align-items:baseline;font-size:.7rem;color:var(--ink-2)}
+.exa-scan-h b{color:var(--ink)}
+.exa-paper{position:relative;display:flex;flex-direction:column;gap:.45rem;padding:1rem 1.1rem;background:#fff;border:1px solid var(--rule);border-radius:.2rem;transform:rotate(-.6deg)}
+.exa-paper h4{font-family:var(--serif);font-weight:400;font-size:.95rem;text-align:center;margin:0 0 .3rem}
+.exa-pl{position:relative;display:grid;grid-template-columns:6.5rem 1fr;gap:.5rem;align-items:baseline;font-size:.62rem;color:var(--muted);padding-bottom:.2rem;border-bottom:1px dotted var(--rule)}
+.exa-pl em{font-family:var(--serif);font-style:italic;font-size:.82rem;color:var(--ink)}
+.exa-pl .m-pin{position:absolute;left:-1.55rem;top:0;width:1rem;height:1rem;font-size:.54rem}
+.exa-pl.hot em{outline:1.5px solid var(--accent);outline-offset:1px;border-radius:.15rem}
+.exa-pl.bad em{outline:1.5px solid var(--alert);outline-offset:1px;border-radius:.15rem}
+.exa-smudge{display:inline-block;padding:0 .2rem;background:color-mix(in srgb,var(--ink) 18%,transparent);border-radius:.4rem;color:color-mix(in srgb,var(--ink) 55%,transparent)}
+.exa-pages{display:flex;gap:.4rem;font-size:.64rem;color:var(--ink-2)}
+.exa-pages span{border:1px solid var(--rule);border-radius:.25rem;padding:.1rem .45rem;background:#fff}
+.exa-pages span.on{border-color:var(--ink);font-weight:700}
+.exa-pages span.bad{border-color:var(--alert);color:var(--alert)}
+.exa-dpage{flex:1;display:flex;flex-direction:column;min-width:0}
+.exa-dhead{padding:1rem 1.1rem .8rem}
+
+/* ---------- writer B (exb-): reminders, cleanup, proposal, catch-up ---------- */
+
+/* the workflow and time-saved tables */
+.exb-who{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;white-space:nowrap}
+.exb-saved tbody tr:last-child td{border-top:1.5px solid var(--ink)}
+
+/* the Agents window, kept short */
+.exb-win{flex:1;display:flex;flex-direction:column}
+.exb-win .ag-page{min-height:26rem}
+
+
+/* lists and tables drawn on a page */
+.exb-tbl td{font-size:.74rem}
+.exb-none{color:var(--muted)}
+
+/* cleanup: findings grouped by kind, each with why and its drafted fix */
+.exb-grp{display:flex;align-items:baseline;gap:.6rem;margin-top:.5rem;padding-bottom:.3rem;border-bottom:1.5px solid var(--ink);font-size:.8rem}
+.exb-grp small{font-size:.66rem;color:var(--muted)}
+.exb-f{display:grid;grid-template-columns:1fr 10rem auto;align-items:center;gap:1rem;padding:.45rem 0;border-bottom:1px solid var(--rule)}
+.exb-f.left{background:color-mix(in srgb,var(--alert) 5%,#fff)}
+.exb-f>div{display:flex;flex-direction:column;gap:.2rem;min-width:0;padding-left:.2rem}
+.exb-f-what{display:flex;align-items:center;gap:.4rem;font-size:.76rem;font-weight:600}
+.exb-f-why{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem}
+.exb-f-fix{font-size:.72rem;font-weight:600;color:var(--accent)}
+.exb-f-acts{display:flex;gap:.35rem;justify-content:flex-end;padding-right:.2rem}
+.exb-f .m-pill{font-size:.55rem;padding:0 .35rem}
+.exb-arrow{color:var(--muted);font-weight:500}
+
+/* proposal: meeting notes in the chat, and the draft’s terms beside its flags */
+.exb-note{align-self:flex-end;max-width:80%;display:flex;flex-direction:column;gap:.3rem;padding:.55rem .7rem;border:1px solid var(--rule);border-radius:.4rem;background:#EEF0F3;font-size:.7rem;line-height:1.4}
+.exb-note p{display:flex;flex-direction:column}
+.exb-note small{color:var(--muted)}
+.exb-note ul{margin:0;padding-left:1rem;color:var(--ink-2)}
+.exb-prop{display:grid;grid-template-columns:1.3fr 1fr;gap:1.4rem;align-items:start}
+.exb-terms,.exb-risks{display:flex;flex-direction:column;gap:.1rem}
+.exb-term{display:grid;grid-template-columns:7.5rem 1fr;gap:.1rem .8rem;padding:.4rem 0;border-bottom:1px solid var(--rule);font-size:.76rem}
+.exb-term small{color:var(--muted);font-size:.68rem}
+.exb-term b{font-variant-numeric:tabular-nums}
+.exb-term span{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem}
+.exb-risks{gap:.5rem}
+.exb-risk{display:flex;flex-direction:column;gap:.25rem;padding:.55rem .65rem;border:1px solid color-mix(in srgb,var(--alert) 45%,transparent);border-radius:.4rem;background:color-mix(in srgb,var(--alert) 5%,#fff)}
+.exb-risk p{display:flex;align-items:center;gap:.4rem;font-size:.74rem}
+.exb-risk .m-pill{font-size:.55rem;padding:0 .35rem}
+
+/* catch-up: short groups, each line a link */
+.exb-dig{display:flex;flex-direction:column;gap:.55rem;min-width:0}
+.exb-dig-top{font-size:.66rem;color:var(--muted)}
+.exb-dg{display:flex;flex-direction:column;gap:.2rem;padding:.45rem .6rem;border:1px solid var(--rule);border-radius:.4rem;background:#fff}
+.exb-dg.first{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 6%,#fff)}
+.exb-dg-h{display:flex;align-items:center;gap:.4rem;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.exb-dg-h em{font-style:normal;font-size:.6rem;font-weight:700;color:var(--ink-2);background:#EEF0F3;border-radius:99px;padding:0 .4rem}
+.exb-dg.first .exb-dg-h em{color:#fff;background:var(--accent)}
+.exb-it{display:grid;grid-template-columns:8.5rem 1fr;gap:.6rem;font-size:.72rem;line-height:1.35}
+.exb-it span{display:flex;flex-direction:column}
+.exb-it small{font-size:.64rem;color:var(--muted)}
+.exb-dig-end{font-size:.72rem;line-height:1.45;color:var(--ink-2)}
+.exb-dig-end b{color:var(--ink)}
+.exb-more{font-size:.7rem;color:var(--ink-2);padding:.35rem 0 .1rem}
+.exb-skip{font-size:.7rem;line-height:1.4;color:var(--ink-2)}
+.exb-skip b{color:var(--alert)}
+
+/* ---------- by-asking (exc-): a drafted edit in the record, and a drafted new record ---------- */
+
+/* the page under the right bar */
+.exc-rec{width:calc(60cqw - 170px);display:flex;flex-direction:column;gap:.65rem;padding:1rem;min-width:0}
+.exc-rec .m-title{white-space:nowrap}
+
+/* a section’s values, one drafted */
+.exc-kvs{display:flex;flex-direction:column}
+.exc-kv{display:grid;grid-template-columns:7rem minmax(0,1fr);align-items:center;gap:.6rem;padding:.35rem 0;border-bottom:1px solid var(--rule);font-size:.74rem;font-variant-numeric:tabular-nums}
+.exc-kv>small{font-size:.66rem;color:var(--muted)}
+.exc-d{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .45rem;padding:.2rem .5rem;border:1.2px dashed var(--accent);border-radius:.3rem;background:color-mix(in srgb,var(--accent) 5%,#fff)}
+.exc-d b{font-weight:700}
+.exc-d small{font-size:.64rem;color:var(--muted)}
+.exc-d em,.exc-note em{font-style:normal;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent);border:1px solid var(--accent);border-radius:.25rem;padding:0 .3rem}
+.exc-note{display:flex;align-items:baseline;gap:.5rem;padding:.4rem .55rem;border:1.2px dashed var(--accent);border-radius:.35rem;background:color-mix(in srgb,var(--accent) 5%,#fff);font-size:.74rem;line-height:1.4}
+.exc-note small{display:block;font-size:.64rem;color:var(--muted)}
+.exc-bar{display:flex;flex-direction:column;gap:.5rem;margin-top:.3rem;padding-top:.6rem;border-top:1px solid var(--rule)}
+.exc-bar p{font-size:.7rem;line-height:1.45;color:var(--ink-2)}
+.exc-bar b{color:var(--ink)}
+.exc-bar span{display:flex;gap:.35rem}
+
+/* the drafted New customer form: each filled field on a dashed wash */
+.exc-form{display:flex;flex-direction:column;gap:.6rem;max-width:26rem}
+.exc-two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.exc-df{padding:.35rem .45rem;border:1.2px dashed var(--accent);border-radius:.35rem;background:color-mix(in srgb,var(--accent) 5%,#fff)}
+.exc-act{display:flex;align-items:center;gap:.4rem;margin-top:auto;padding-top:.6rem;border-top:1px solid var(--rule)}
+

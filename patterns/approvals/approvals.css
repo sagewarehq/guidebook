@@ -1,0 +1,139 @@
+/* Approvals mock-ups (apv-), drawn by approval-kit.tsx and the Approvals pages, on top of the Agent kit (ag-).
+   Green marks what’s paid or done; red only what’s held, late, or can’t go ahead. */
+
+/* the run page: held first, then judgment calls, then the clean matches summed */
+.apv-run{gap:14px}
+.apv-run .as-meta .ag-ava{margin-left:2px}
+.apv-facts{max-width:560px}
+.apv-tbl td{font-size:.74rem;vertical-align:top}
+.apv-tbl td:first-child{font-weight:inherit}
+.apv-nm{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.apv-nm .m-pill{font-size:.55rem;padding:2px 6px}
+.apv-why{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px}
+.apv-muted{color:var(--muted)}
+.apv-tbl td.apv-muted{font-weight:500}
+.apv-grp td{padding-top:14px;border-bottom:1px solid var(--ink-2)}
+.apv-grp b{font-size:.74rem}
+.apv-grp em{font-style:normal;font-size:.62rem;font-weight:700;color:var(--ink-2);background:#EEF0F3;border-radius:99px;padding:1px 6px;margin:0 8px 0 6px}
+.apv-grp span{font-size:.68rem;color:var(--muted)}
+.apv-tbl tbody tr:first-child td{padding-top:4px}
+.apv-sum td{background:#EEF0F3}
+.apv-sum td:first-child{padding-left:8px}
+.apv-sub td{font-size:.7rem;color:var(--ink-2);padding-top:4px;padding-bottom:4px}
+.apv-sub td:nth-child(1),.apv-sub td:nth-child(2){padding-left:16px}
+.apv-out td{background:color-mix(in srgb,var(--alert) 4%,#fff)}
+.apv-pays{font-size:.68rem;font-weight:600;color:var(--accent);white-space:nowrap}
+.apv-until{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:600;color:var(--ink);border:1px solid var(--ink-2);border-radius:4px;padding:2px 7px;background:#fff;white-space:nowrap}
+.apv-until i{font-style:normal;color:var(--muted)}
+.apv-selbar{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:6px;background:var(--ink);color:#fff;font-size:.74rem}
+.apv-selbar b{font-variant-numeric:tabular-nums}
+.apv-selbar .m-btn{padding:5px 10px;font-size:.7rem}
+.apv-selbar .m-btn.pri{background:#fff;color:var(--ink);border-color:#fff}
+
+/* a card drawn at a readable width in the feed, and the anatomy pins beside it */
+.apv-w{max-width:34rem}
+.apv-w.narrow{max-width:26rem}
+.apv-pins{padding-left:2rem}
+.apv-pins .ag-card{overflow:visible}
+.apv-pins .ag-card-h,.apv-pins .ag-facts,.apv-pins .ag-lines,.apv-pins .ag-held,.apv-pins .ag-acts,.apv-pins .ag-acts small{position:relative}
+.apv-pins .ag-card-h::before,.apv-pins .ag-facts::before,.apv-pins .ag-lines::before,.apv-pins .ag-held::before,.apv-pins .ag-acts::before,.apv-pins .ag-acts small::before{position:absolute;left:-2.05rem;top:.45rem;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;font-style:normal;line-height:1;letter-spacing:0;text-transform:none}
+.apv-pins .ag-card-h::before{content:"1"}
+.apv-pins .ag-facts::before{content:"2"}
+.apv-pins .ag-lines::before{content:"3"}
+.apv-pins .ag-held::before{content:"4"}
+.apv-pins .ag-acts::before{content:"5"}
+.apv-pins .ag-acts small::before{content:"6";left:-2.75rem;top:-.1rem}
+
+/* a card once it’s answered: the answer replaces the buttons */
+.apv-done{display:flex;align-items:center;gap:.4rem;padding:.55rem .7rem;border-top:1px solid var(--rule);font-size:.7rem;color:var(--ink-2)}
+.apv-done b{color:var(--accent)}
+
+/* the bare card to avoid */
+.apv-bare{display:flex;flex-direction:column;gap:.5rem;border:1px solid var(--ink);border-radius:.5rem;background:#fff;padding:.6rem .7rem;font-size:.76rem}
+.apv-bare span{display:flex;gap:.4rem}
+
+/* a changed line: who changed it, in the line itself */
+.apv-chg{display:inline-flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:var(--ink-2);background:#EEF0F3;border-radius:.3rem;padding:0 .35rem}
+.apv-chg .m-ini{width:1rem;height:1rem;font-size:.42rem}
+
+/* the drawer from the right, over the run page */
+.apv-drawer{position:absolute;z-index:3;top:0;right:0;bottom:0;width:36%;min-width:20rem;display:flex;flex-direction:column;gap:12px;padding:16px 18px;background:#fff;border-left:1.2px solid var(--ink);box-shadow:0 0 0 2000px color-mix(in srgb,var(--ink) 10%,transparent)}
+.apv-drawer .pd-foot{margin-top:auto}
+.apv-dh{display:flex;justify-content:space-between;font-size:.95rem}
+.apv-dh span{color:var(--ink-2);font-size:1.15rem;line-height:1}
+.apv-ds{font-size:.74rem;color:var(--muted);margin-top:-8px}
+.apv-radio{display:flex;flex-direction:column;gap:6px}
+.apv-radio label{font-size:.74rem;font-weight:700}
+.apv-radio p{display:flex;align-items:flex-start;gap:8px;font-size:.74rem;color:var(--ink-2);border:1px solid var(--rule);border-radius:5px;padding:6px 9px}
+.apv-radio p.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,#fff);color:var(--ink)}
+.apv-radio i{flex:none;width:11px;height:11px;margin-top:2px;border-radius:50%;border:1px solid var(--ink-2)}
+.apv-radio p.on i{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 2px #fff}
+.apv-radio small{display:block;color:var(--muted);font-size:.66rem}
+.apv-after{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.apv-after span{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:5px;padding:5px 8px;font-size:.74rem;font-weight:700;font-variant-numeric:tabular-nums}
+.apv-after small{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.apv-after em{font-style:normal;font-size:.6rem;font-weight:500;color:var(--muted)}
+
+/* history on the run */
+.apv-hist{display:flex;flex-direction:column;gap:.6rem;padding:.2rem 0}
+.apv-hist .as-h{font-size:.74rem}
+.apv-hist q{quotes:"“" "”";color:var(--ink)}
+
+/* Waiting on you */
+.apv-wait td{font-size:.74rem}
+.apv-wait td:first-child{white-space:nowrap}
+.apv-wh{display:flex;align-items:center;gap:8px}
+.apv-wh .m-pill{font-size:.58rem;padding:2px 6px}
+.apv-wnote{display:block;margin-top:2px;font-size:.66rem;color:var(--muted)}
+.apv-empty{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:28px 4px 18px;border-top:1.5px solid var(--ink)}
+.apv-empty b{font-family:var(--serif);font-weight:400;font-size:1.1rem}
+.apv-empty p{font-size:.76rem;color:var(--ink-2)}
+.apv-home{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+.apv-box{display:flex;flex-direction:column;gap:8px;border:1px solid var(--rule);border-radius:6px;padding:10px 12px}
+.apv-box .m-k{display:flex;justify-content:space-between}
+.apv-box .m-k a{letter-spacing:0;text-transform:none;font-size:.68rem}
+.apv-hi{display:flex;align-items:flex-start;gap:8px;font-size:.74rem;line-height:1.35;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.apv-hi:last-child{border-bottom:0;padding-bottom:0}
+.apv-hi span{flex:1}
+.apv-hi small{display:block;color:var(--muted);font-size:.66rem}
+
+/* email and phone */
+.apv-mail{display:flex;flex-direction:column;gap:10px;font-size:.78rem;line-height:1.45}
+.apv-mh{display:flex;flex-direction:column;gap:2px;padding-bottom:8px;border-bottom:1px solid var(--rule);font-size:.72rem;color:var(--ink-2)}
+.apv-mh b{font-size:.84rem;color:var(--ink)}
+.apv-mail ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:3px;font-size:.74rem;color:var(--ink-2)}
+.apv-mail ul b{color:var(--ink)}
+.apv-mail small{font-size:.68rem;color:var(--muted)}
+.apv-mfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.apv-mfacts span{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:5px;padding:5px 8px;font-weight:700;font-variant-numeric:tabular-nums}
+.apv-mfacts small{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.apv-phones{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:28px}
+.apv-phone{width:250px;min-height:500px;display:flex;flex-direction:column;border:1.5px solid var(--ink);border-radius:28px;padding:12px 10px;background:#fff;overflow:hidden}
+.apv-phone.lock{background:#EEF0F3}
+.apv-clock{text-align:center;font-family:var(--serif);font-size:2.6rem;line-height:1;margin:28px 0 4px}
+.apv-date{text-align:center;font-size:.7rem;color:var(--ink-2);margin-bottom:22px}
+.apv-note{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:9px 10px;font-size:.7rem;line-height:1.35;color:var(--ink-2)}
+.apv-note p:first-child{display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.apv-note b{color:var(--ink)}
+.apv-nacts{display:flex;gap:6px;margin-top:8px}
+.apv-nacts span{flex:1;text-align:center;font-size:.7rem;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:10px;padding:7px 0}
+.apv-nacts span.bad{color:var(--alert);border-color:var(--alert)}
+.apv-ptop{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;padding:4px 4px 8px;border-bottom:1px solid var(--rule);margin:0 -10px 8px;padding-left:14px;padding-right:14px}
+.apv-phone .ag-card{font-size:.7rem}
+.apv-phone .ag-facts{gap:.7rem;font-size:.72rem}
+.apv-phone .ag-line-s{display:none}
+.apv-phone .ag-acts .m-btn{flex:1;justify-content:center}
+
+/* settings for a task: reminders, escalation, expiry */
+.apv-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.apv-steps li{position:relative;display:grid;grid-template-columns:8.5rem 1fr;gap:14px;padding:0 0 14px 22px;font-size:.76rem;line-height:1.4;color:var(--ink-2)}
+.apv-steps li::before{content:"";position:absolute;left:4px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.apv-steps li::after{content:"";position:absolute;left:7.5px;top:15px;bottom:0;width:1px;background:var(--rule)}
+.apv-steps li:last-child::after{display:none}
+.apv-steps li.bad::before{background:var(--alert)}
+.apv-steps li b{color:var(--ink)}
+.apv-steps li>span:first-child{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.apv-set{display:flex;flex-direction:column;gap:10px;max-width:560px}
+.apv-set .m-field{max-width:none}
+.apv-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ag-has-panel:has(.apv-drawer) .as-a-grid{min-height:38rem}

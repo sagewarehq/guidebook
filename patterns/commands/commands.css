@@ -1,0 +1,138 @@
+/* Slash commands mock-ups, drawn by commands-kit.tsx. cm- is this chapter's prefix; it builds on the ag- kit.
+   Green marks the level and what's right; red only for warnings. */
+
+/* frames */
+.cm-short{width:100%}
+.cm-short .ag-has-panel .as-a-grid{min-height:36rem}
+.cm-mid .ag-has-panel .as-a-grid{min-height:47rem}
+.cm-box{position:relative;width:100%;height:25rem;border:1.2px solid var(--ink);border-radius:.5rem;overflow:hidden;background:#fff}
+.cm-box.tall{height:30rem}
+.cm-box .ag-panel{width:100%;min-width:0;border-left:0}
+
+/* the foot of a chat: the / menu above the message box */
+.cm-foot{display:flex;flex-direction:column;gap:.45rem;margin:0 .9rem .9rem}
+
+/* the / menu */
+.cm-menu{display:flex;flex-direction:column;border:1px solid var(--ink);border-radius:.4rem;background:#fff;overflow:hidden}
+.cm-menu .m-k{padding:.45rem .65rem .15rem}
+.cm-row{display:grid;grid-template-columns:7.2rem 1fr;align-items:baseline;gap:.2rem .6rem;padding:.35rem .65rem}
+.cm-row.on{background:#EEF0F3}
+.cm-row b{font-size:.74rem;font-weight:700;color:var(--ink);white-space:nowrap}
+.cm-row b mark{background:none;color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.cm-row span{font-size:.7rem;color:var(--ink-2);line-height:1.35}
+.cm-row small{grid-column:2;font-size:.62rem;color:var(--muted)}
+.cm-built{display:flex;flex-wrap:wrap;gap:.3rem;padding:.2rem .65rem .5rem;border-bottom:1px solid var(--rule)}
+.cm-built span{font-size:.68rem;font-weight:700;color:var(--ink-2);background:#EEF0F3;border-radius:.3rem;padding:.12rem .4rem}
+.cm-menu-f{font-size:.62rem;color:var(--muted);padding:.35rem .65rem;border-top:1px solid var(--rule)}
+
+/* the message box, with a command in it */
+.cm-comp{display:flex;flex-direction:column;gap:.5rem;border:1px solid var(--ink);border-radius:.45rem;padding:.6rem .65rem;background:#fff;font-size:.76rem;line-height:1.5}
+.cm-line{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem}
+.cm-tok{font-weight:800;color:var(--ink)}
+.cm-chip{display:inline-flex;align-items:baseline;gap:.3rem;font-size:.7rem;font-weight:600;color:var(--ink);border:1px solid var(--rule);border-radius:.3rem;padding:.08rem .4rem;background:#fff}
+.cm-chip small{font-size:.62rem;font-weight:600;color:var(--muted)}
+.cm-chip.on{border-color:var(--ink)}
+.cm-caret{display:inline-block;width:1px;height:1em;vertical-align:-.15em;background:var(--ink)}
+.cm-typed{color:var(--ink)}
+.cm-prev{display:flex;align-items:baseline;gap:.45rem;font-size:.7rem;color:var(--ink-2);line-height:1.4;padding-top:.45rem;border-top:1px solid var(--rule)}
+.cm-lvl{flex:none;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,#fff);border-radius:99px;padding:.1rem .45rem}
+.cm-bar{display:flex;align-items:center;gap:.8rem;font-size:.64rem;font-weight:600;color:var(--muted)}
+.cm-bar b{color:var(--ink-2);font-weight:700}
+.cm-bar i{margin-left:auto;font-style:normal;font-weight:800;color:#fff;background:var(--ink);border-radius:.3rem;padding:.05rem .45rem}
+
+/* a command as sent, in the feed */
+.cm-sent{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.ag-me .cm-sent .cm-tok{color:inherit}
+.ag-me .cm-chip{color:inherit;background:transparent;border-color:color-mix(in srgb,currentColor 35%,transparent)}
+.ag-me .cm-chip small{color:inherit;opacity:.7}
+.cm-note{font-size:.64rem;color:var(--muted);text-align:center}
+
+/* the Agents window: sessions on the left, the chat on the right */
+.cm-ws{flex:1;display:grid;grid-template-columns:14rem 1fr;min-height:30rem;border-top:1px solid var(--rule)}
+.cm-sess{display:flex;flex-direction:column;gap:.25rem;padding:.9rem .6rem;border-right:1px solid var(--rule)}
+.cm-sess-h{display:flex;align-items:center;justify-content:space-between;margin:0 .3rem .5rem;font-size:.82rem}
+.cm-sess-h .m-btn{font-size:.68rem;padding:.25rem .55rem}
+.cm-s{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.5rem;padding:.45rem .4rem;border-radius:.3rem}
+.cm-s.on{background:#EEF0F3}
+.cm-s span{min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.cm-s b{font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cm-s small{font-size:.64rem;color:var(--muted)}
+.cm-s em{font-style:normal;font-size:.6rem;color:var(--muted);align-self:start;margin-top:.15rem}
+.cm-chat{display:flex;flex-direction:column;min-width:0;position:relative}
+.cm-chat-h{display:flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-bottom:1px solid var(--rule);font-size:.82rem}
+.cm-chat-h small{color:var(--muted);font-size:.7rem}
+.cm-chat-h .as-grow{flex:1}
+.cm-chat .ag-feed{padding:.8rem 1.2rem}
+.cm-chat .cm-foot{margin:0 1.2rem 1rem}
+
+/* a message's own menu: Save as command */
+.cm-hover{position:relative;align-self:flex-end;display:flex;flex-direction:column;align-items:flex-end;gap:.3rem}
+.cm-hover .ag-me{outline:1.5px solid var(--accent);outline-offset:.2rem;border-radius:.4rem}
+.cm-pop{display:flex;flex-direction:column;border:1px solid var(--ink);border-radius:.4rem;background:#fff;font-size:.72rem;overflow:hidden;min-width:11rem}
+.cm-pop p{padding:.35rem .65rem}
+.cm-pop p.on{background:#EEF0F3;font-weight:700}
+
+/* the Save as command drawer */
+.cm-drawer{position:absolute;z-index:3;top:0;right:0;bottom:0;width:46%;display:flex;flex-direction:column;gap:.75rem;padding:1rem 1.1rem;background:#fff;border-left:1.2px solid var(--ink);overflow:hidden}
+.cm-drawer-h{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem}
+.cm-drawer-h span{color:var(--muted)}
+.cm-drawer-s{font-size:.68rem;color:var(--muted);margin-top:-.5rem}
+.cm-two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.cm-ask{font-size:.76rem;line-height:1.7;border:1px solid var(--rule);border-radius:.35rem;padding:.45rem .6rem;background:#fff}
+.cm-ask .cm-chip{border-color:var(--accent);color:var(--accent)}
+.cm-lbl{font-size:.7rem;font-weight:600;color:var(--ink-2);margin-bottom:.25rem}
+.cm-inputs{width:100%;border-collapse:collapse;font-size:.72rem}
+.cm-inputs th{text-align:left;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted);padding:0 .5rem .3rem 0;border-bottom:1px solid var(--rule)}
+.cm-inputs td{padding:.35rem .5rem .35rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.cm-inputs td:first-child{font-weight:700}
+.cm-radio{display:flex;flex-direction:column;gap:.3rem;font-size:.74rem}
+.cm-radio p{display:flex;align-items:center;gap:.45rem}
+.cm-radio i{width:.7rem;height:.7rem;border:1px solid var(--ink-2);border-radius:50%;flex:none}
+.cm-radio p.on i{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 2px #fff}
+.cm-radio small{color:var(--muted);font-size:.66rem}
+.cm-fixed{display:flex;align-items:baseline;gap:.5rem;font-size:.72rem;color:var(--ink-2);background:#EEF0F3;border-radius:.35rem;padding:.4rem .6rem;line-height:1.4}
+.cm-test{display:flex;flex-direction:column;gap:.25rem;font-size:.72rem;color:var(--ink-2);border:1px solid var(--accent);border-radius:.35rem;padding:.45rem .6rem;line-height:1.4}
+.cm-test b{color:var(--accent)}
+.cm-drawer .pd-foot{display:flex;justify-content:flex-end;gap:.4rem;margin-top:auto}
+
+/* the Commands tab and a command's page */
+.cm-page{gap:1rem}
+.cm-p{font-size:.76rem;line-height:1.5;color:var(--ink-2)}
+.cm-grp{display:flex;flex-direction:column;gap:.4rem}
+.cm-grp-h{display:flex;align-items:center;gap:.6rem}
+.cm-grp-h small{font-size:.68rem;color:var(--muted)}
+.cm-tbl td{font-size:.74rem;vertical-align:top}
+.cm-tbl td:first-child{white-space:nowrap}
+.cm-tbl td span{display:block;font-size:.68rem;font-weight:400;color:var(--ink-2);margin-top:.1rem;white-space:normal}
+.cm-tbl .cm-acts{white-space:nowrap;font-size:.7rem;font-weight:600;color:var(--accent);text-align:right}
+.cm-tbl .cm-acts a+a{margin-left:.7rem}
+.cm-tbl tr.cm-sel td{background:color-mix(in srgb,var(--accent) 7%,#fff)}
+.cm-see{font-size:.7rem;color:var(--muted)}
+.cm-ver{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:.4rem;background:#fff;overflow:hidden}
+.cm-ver p{display:grid;grid-template-columns:5rem 9rem 1fr;gap:.6rem;align-items:baseline;padding:.45rem .7rem;border-bottom:1px solid var(--rule);font-size:.72rem}
+.cm-ver p:last-child{border-bottom:0}
+.cm-ver b{display:flex;align-items:center;gap:.35rem}
+.cm-ver em{font-style:normal;font-size:.56rem;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,#fff);border-radius:99px;padding:.05rem .35rem}
+.cm-ver small{color:var(--muted);font-size:.66rem}
+.cm-ver span{color:var(--ink-2)}
+.cm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.cm-card{display:flex;flex-direction:column;gap:.15rem;border:1px solid var(--rule);border-radius:.4rem;padding:.55rem .7rem;background:#fff}
+.cm-card small{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.cm-card b{font-size:.8rem}
+.cm-card span{font-size:.68rem;color:var(--ink-2)}
+.cm-toast{align-self:flex-start}
+
+/* the /status reply */
+.cm-stat{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:.4rem;background:#fff;overflow:hidden;font-size:.72rem}
+.cm-stat p{display:grid;grid-template-columns:1fr auto;gap:.1rem .6rem;padding:.4rem .6rem;border-bottom:1px solid var(--rule)}
+.cm-stat p:last-child{border-bottom:0}
+.cm-stat b{font-weight:700}
+.cm-stat small{grid-column:1;font-size:.64rem;color:var(--muted)}
+.cm-stat .m-pill{grid-row:1 / span 2;grid-column:2;align-self:center}
+
+/* the Avoid menu: bare names */
+.cm-bare .cm-row{grid-template-columns:1fr}
+.cm-bare .cm-row b{font-family:ui-monospace,monospace;font-weight:600}
+
+/* the Avoid form: options a command must not have */
+.cm-bad{color:var(--alert)}

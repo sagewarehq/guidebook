@@ -1,0 +1,76 @@
+/* Global search mock-ups: the palette (sr-), shown open over the app shell or on its own. */
+.sr-pal{display:flex;flex-direction:column;background:#fff;border:1.2px solid var(--ink);border-radius:8px;overflow:hidden;font-size:.8rem;width:100%;text-align:left}
+.sr-in{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--rule);font-size:.9rem}
+.sr-in b{font-weight:600}
+.sr-ph{color:var(--muted);font-size:.84rem}
+.sr-glass{color:var(--muted)}
+.sr-caret{display:inline-block;width:1px;height:16px;background:var(--ink);margin-right:auto;font-style:normal}
+.sr-pal kbd,.sr-bar kbd{font-family:inherit;font-size:.64rem;font-weight:600;color:var(--ink-2);border:1px solid var(--rule);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#fff;line-height:1.5}
+.sr-body{display:flex;flex-direction:column;gap:6px;padding:6px}
+.sr-g{display:flex;justify-content:space-between;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted);padding:4px 6px 2px}
+.sr-g small{font-size:.66rem;letter-spacing:0}
+.sr-row{display:flex;align-items:center;gap:10px;padding:5px 6px;border-radius:5px}
+.sr-row.on{background:color-mix(in srgb,var(--accent) 11%,#fff)}
+.sr-t{flex:none;width:58px;font-size:.62rem;font-weight:700;color:var(--ink-2);background:#EEF0F3;border-radius:3px;padding:2px 0;text-align:center}
+.sr-main{flex:1;min-width:0;display:flex;flex-direction:column}
+.sr-main b{font-weight:600}
+.sr-main small{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sr-m{background:none;color:inherit;font-weight:800;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:2px}
+.sr-foot{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-top:1px solid var(--rule);font-size:.74rem;color:var(--ink-2)}
+.sr-keys{display:flex;gap:14px;padding:6px 12px;border-top:1px solid var(--rule);background:#EEF0F3;font-size:.68rem;color:var(--muted)}
+.sr-keys span{display:inline-flex;align-items:center;gap:3px}
+.sr-flat p{padding:5px 8px;border-bottom:1px solid var(--rule)}
+
+/* open over the shell */
+.sr-over{position:relative;flex:1;display:grid}
+.sr-over>*{grid-area:1/1}
+.sr-behind{opacity:.3}
+.sr-over::before{content:"";grid-area:1/1;background:color-mix(in srgb,var(--ink) 8%,transparent);z-index:1}
+.sr-float{z-index:2;justify-self:center;align-self:start;margin:14px 0 18px;width:min(560px,88%)}
+
+/* the box in the top bar */
+.sr-top .m-win-b{padding:0}
+.sr-bar{display:flex;align-items:center;gap:8px;padding:10px 12px}
+.sr-box{flex:1;display:flex;align-items:center;gap:8px;border:1px solid var(--rule);border-radius:6px;padding:6px 10px;color:var(--muted);font-size:.78rem;background:#fff}
+.sr-box kbd{margin-left:auto}
+.sr-box.bad{flex:1}
+.sr-sel{font-size:.74rem;border:1px solid var(--ink-2);border-radius:5px;padding:6px 8px;white-space:nowrap}
+.sr-me{display:flex;align-items:center;gap:8px}
+.g-pair:has(.sr-pal){grid-template-columns:1fr 1fr}
+
+/* Only what you may see (pm-): the same query, side by side, for people with different roles. */
+.pm-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.pm-one{grid-template-columns:minmax(0,560px);justify-content:center}
+.pm-side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pm-who{display:flex;align-items:center;gap:8px;font-size:.8rem}
+.pm-who b{font-weight:700}
+.pm-who span{color:var(--muted)}
+.pm-leak{color:var(--alert);font-weight:600}
+.pm-net .m-win-b{display:flex;flex-direction:column;gap:6px;font-size:.78rem}
+.pm-step{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.pm-step:last-child{border-bottom:none}
+.pm-step b{font-weight:600;white-space:nowrap}
+.pm-step span{text-align:right;color:var(--ink-2)}
+
+/* All results page (sp-): the routed search page inside the app shell. */
+.sp-q{display:flex;align-items:center;gap:8px;border:1.5px solid var(--ink-2);border-radius:6px;padding:8px 12px;background:#fff;font-size:.86rem}
+.sp-q b{font-weight:600}
+.sp-x{margin-left:auto;color:var(--muted)}
+.sp-bar{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;font-size:.72rem;color:var(--ink-2)}
+.sp-sort{margin-left:auto}
+.sp-sort b{font-weight:600;border:1px solid var(--rule);border-radius:4px;padding:2px 6px;background:#fff}
+.sp-cb{display:inline-block;width:11px;height:11px;border:1.2px solid var(--ink-2);border-radius:2px;vertical-align:-1px;margin-right:5px;background:#fff}
+.sp-grp{display:flex;flex-direction:column}
+.sp-gh{display:flex;align-items:baseline;gap:8px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted);padding:4px 6px 4px;border-bottom:1.5px solid var(--ink)}
+.sp-gh small{font-size:.66rem;letter-spacing:0}
+.sp-gh .m-link{margin-left:auto;font-size:.7rem;letter-spacing:0;text-transform:none}
+.sp-row{border-bottom:1px solid var(--rule);border-radius:0;padding:7px 6px}
+.sp-row .m-pill{flex:none}
+.sp-mini{gap:8px;padding-bottom:8px}
+.sp-mini>.as-views2,.sp-mini>.sp-grp,.sp-mini>.sp-flat-h{margin:0 10px}
+.sp-mini .as-views2>span{font-size:.66rem;padding:5px 7px}
+.sp-flat-h{font-size:.72rem;color:var(--ink-2)}
+.sp-empty{display:flex;flex-direction:column;gap:8px;padding:14px 6px 4px;font-size:.8rem;color:var(--ink-2)}
+.sp-empty .sp-row{border:1px solid var(--rule);border-radius:5px;background:#fff}
+.sp-empty ul{margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.sp-mini .as-views2{flex-wrap:wrap}
