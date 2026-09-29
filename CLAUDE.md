@@ -12,6 +12,7 @@ Read on a desktop browser (Jesse, 2026-09-28): the site has no phone layout.
 - `npm run build` writes `dist/index.html`, one self-contained file that opens from `file://`. Never edit `dist/`.
 - `npm run check` type-checks everything.
 - Hosting is undecided; local only for now.
+- Changes go through pull requests into `main`, rebased on `origin/main` and squash-merged. `CONTRIBUTING.md` has the steps; `README.md` covers running it.
 
 ## Layout
 
