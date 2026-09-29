@@ -6,7 +6,7 @@ Internal. Not for clients.
 
 ## Run it
 
-You need [Node.js](https://nodejs.org/) 20 or later and npm.
+You need [Node.js](https://nodejs.org/) 22.12 or later (Vite 8 needs it) and npm.
 
 ```bash
 git clone git@github.com:sagewarehq/guidebook.git
